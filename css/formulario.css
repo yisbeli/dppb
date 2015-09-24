@@ -1,0 +1,130 @@
+h1,h2
+
+	{
+		color:	red;
+		font-weight: bold;
+		font-family: georgia;
+		font-style: oblique;
+		text-align: center;
+	}
+input:focus
+	{
+		border: 2px solid red;
+	}
+section
+	{
+		color: red;
+	}
+section.form
+	{
+		border: 0px solid silver;
+		width: 90%;
+		margin: auto;
+	}
+section.form1
+	{
+		margin: .3em;
+		border: 0px solid silver;
+		width: 90%;
+		margin: auto;
+	}
+section.form3
+	{
+		margin: 1em;
+		border: 0px solid silver;
+		width: 90%;
+		margin: auto;
+	}
+section.form2 /* BOTONES DEL ENVIAR FORMULARIO TALENTO HUMANO */
+	{
+		border: 0px solid silver;
+		margin: 0em auto;
+		padding: .5em;
+	}
+span.nombre
+	{
+		margin: 1em;
+		border: 0px solid silver;
+		float: left;
+		width: 40%;
+	}
+span.nombre1
+	{
+		margin: 1em;
+		border: 0px solid silver;
+		float: right;
+		width: 50%;
+	}
+span.nombre2
+	{
+		margin: 1em;
+		border: 0px solid silver;
+		float: left;
+		width: 40%;
+	}
+textarea,select,label 
+	{
+		font-family: georgia;
+		font-style: oblique;
+	}
+
+input::-webkit-input-placeholder
+	{
+
+  	font-family: georgia;
+  	font-style:oblique;
+
+	}
+
+input::-moz-placeholder 
+	{
+
+ 	font-family: georgia; 
+ 	font-style: oblique;
+
+ 	}
+
+input::-ms-input-placeholder 
+	{
+
+  font-family: georgia;
+  font-style: oblique; 
+
+  }
+label{
+	margin:10px;
+}
+select, input, textarea{
+	float: left;
+	width:350px;
+	margin: 10px;
+}
+label{
+	width:45%;
+	float: left;
+	text-align: right;
+}
+.buttons{
+	overflow: hidden;
+	width:60%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+input[type="submit"], input[type="reset"]{
+	width: 45%;
+	font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #BFBFBF;
+    border-radius: 5px;
+}
+select.nac{
+	width: 40px;
+}
+input.cedula{
+	width:260px;
+}
+label.guion{
+	width:10px;
+}

@@ -1,0 +1,174 @@
+﻿body
+	{
+		font: 13px/1.6 Georgia, serif;
+		font-style: oblique;
+		background-color: white;
+		color: black;
+		text-align: center;
+	}
+#contenedor /* CONTENEDOR DE TODAS LAS PAGINAS WEB */
+	{
+		width: 80%;
+		background-color: #F1F1F1;
+		border: 2px solid silver;
+  		margin: 2em auto;
+  		padding: 1em 2em 0em 2em;
+	}
+#cuerpo /* CONTENEDOR DE CONTENIDO TODOS LOS FORMULARIOS */
+	{
+		text-align: center;
+		border: 0px solid silver;
+		margin: 1em auto;
+		
+	}
+#cuerpo_form /* ESTILO PARA EL CONTENEDOR DE LOS FORMULARIOS */
+	{
+		color: black;
+		margin: 0em 5em;
+		padding: 2em 0em 2em 0em;
+		border: 2px solid silver;
+		border-radius: 10px;
+		background-color: #f0f0bf;
+		min-height: 300px;
+	}
+#cuerpoA /* CONTENEDOR DE CONTENIDO DE LA SALA.PHP (oBJETIVOS GRAL. Y ESP.) */
+	{
+		border: 0px solid silver;
+		padding: 1.5em;
+		margin: 1em 1em 1em 1em;
+	}
+#cuerpoB /* CUERPO DEL CONTENIDO DE LA SALA.PHP */
+	{
+		text-align: center;
+		border: 0px solid silver;
+		margin: 1em 2em;
+	}
+#completo /*CUERPO DEL INDEX, INICIO DE SESION Y MISION Y VISION*/
+	{
+		margin: 0em 0em 36em 0em;
+		padding: 0em 0em 0em 0em;
+		border-radius: 3px;
+	}
+#cuerpo1 /*CUERPO DEL INDEX, INICIO DE SESION*/
+	{
+		float: right;
+		width: 230px;
+		padding: 2em 0em 2em 0em;
+		border: 2px solid silver;
+		border-radius: 3px;
+		background-color: #E6E6F2;
+	}
+#cuerpo2 /*CUERPO DEL INDEX, MISION Y VISION*/
+	{
+		float: left;
+		width: 526px;
+		padding: 0em 0em 0em 0em;
+		background-image: url("../imagenes/fondo_logo.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		
+	}
+section img{
+	opacity: 0.2;
+	position: absolute;
+	z-index: 9999;
+	left: 41%;
+}
+
+#sala{
+	position: relative;
+}
+/*#fondo
+{
+		background-image: url("../imagenes/logo_mp.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		opacity: 1;
+}*/
+
+#pie /* 	ESTILO PARA EL PIE DE PAGINA */
+	{
+		border: 1px solid silver;
+		border-radius: 2px;
+		margin: 2em auto;
+		padding: .5em;
+		background-color: #EAEAEA;
+	}
+#pie p /* FORMATO DEL PIE DE PAGINA - PARRAFOS */
+	{
+		text-align: center;
+	}
+#cont_portada /* CONTENEDOR DE LA PORTADA DEL SISTEMA */
+{
+	border: 1px solid silver;
+		border-radius: 2px;
+		margin: 2em auto;
+		padding: .5em;
+		background-color: #EAEAEA;
+}
+#vision /* MARGENES PARA LOS OBJETIVOS ESP. SALAP.PHP */
+	{
+		margin: 0em 0em 0em 3em;
+	}
+#marquee/* ESTILO PARA EL TEXTO TIPO MARQUEE */
+	{
+		color: red;
+		font: 20px Georgia, serif;
+		font-weight: bold;
+	}
+#no_acceso /* PARA EL TEXT QUE RECUPERARA LA ID O PASS DEL USERS */
+	{
+		color: blue;
+		font: 11px/1.6 Georgia, serif;
+	}
+#logo /* MARGENES PARA LOS LOGOS */
+{
+		border: 1px solid silver;
+		border-radius: 2px;
+		margin: 2em auto;
+}
+#acerca_de
+{
+	margin: 30px 90px;
+}
+#align
+{
+	text-align: right;
+}
+h4
+{
+	text-align: right;
+}
+p
+	{
+ 		text-align: justify;
+		font: 12px/1.5 Georgia, serif;
+		color: black;
+	}
+label
+{
+	font: 12px/1.5 georgia, serif;
+	color: black;
+	font-weight: bold;
+	text-align: left;
+}
+table{
+	text-align: center;
+	border:3px solid blue;
+	border-collapse: collapse;
+}
+th{
+	border-bottom: 3px solid blue;
+	text-transform: uppercase;
+}
+
+legend{
+	font: normal bold 15px Georgia, serif;
+	background:#EAEA89;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 10px;
+	padding: 0.1em 0.5em;
+	color: white;
+	margin:auto;
+
+}

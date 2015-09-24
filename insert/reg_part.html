@@ -1,0 +1,97 @@
+<?php
+	include_once '../includes/bd_conexion.php';
+?>
+
+<!DOCTYPE html>
+<html lang = "es">
+	<head>
+		<?php require_once '../includes/head.php'; ?>
+	</head>
+	<body>		
+		<div  align="center" id="contenedor">
+			<header>
+				<!-- Membrete -->
+				<?php require_once '../includes/membrete.php'; ?>
+			</header>
+	 
+				<div id="menu">
+						<!-- Menú principal -->
+						<?php require_once '../includes/menu_principal.php'; ?>
+				</div>
+				<!-- Formulario -->
+				<div id="cuerpo">
+						<h1>Registro de Participantes</h1>
+						<form method="post" action="insert_part.php">
+							<legend>Datos de los participantes</legend>
+							<section id="cuerpo_form">
+				
+				
+							<!-- Cedula del participante -->
+							<label for="ced_part">Cédula: </label>
+								<select name="nacionalidad" requi >
+									<option name="nacionalidad" value="V"> V </option>
+									<option name="nacionalidad" value="E"> E </option>
+								</select>
+							<label> - </label>
+								<input id="text_form" type="text" name="ced_part" maxlength="8" size="6" placeholder="00000000" requi patter="^\d{8}" title="Ejemplo: V-00000000" />
+							
+							<!-- Nombre del participante -->							
+							<label for="nomb_part">Nombres: <label>
+								<input id="text_form" type="text" maxlength="30" name="nomb_part" placeholder="Nombres" requi patter="^[a-zA-Z]{3,15}" title="Ingrese un nombre" />
+							
+							<!-- Apellido del participante -->
+							<label for="apell_part">Nombres: <label>
+								<input id="text_form" type="text" maxlength="30" name="apell_part" placeholder="apellido" requi patter="^[a-zA-Z]{3,15}" title="Ingrese un apellido" />
+							
+							<!-- Profesion -->
+								<label>Profesion del Participante: </label>
+								<select name="profe_part">
+									<option name="profe_part" value=""> -- Seleccione -- </option>
+									<option name="profe_part" value="B">Bachiller</option>
+									<option name="profe_part" value="TM">Tecnico Medio</option>
+									<option name="profe_part" value="TSU">Tecnico Superior</option>
+									<option name="profe_part" value="Lic">Licenciado</option>
+									<option name="profe_part" value="Ing">Ingeniero</option>
+								</select> <br /><br />	
+								
+							<!-- TELÉFONO - MOVIL -->
+								<label for="tlfn_part">Teléfono: </label>
+								<input id="text_form" type="text" name="movil" maxlength="12" size="10" placeholder="0000-0000000" requi patter="^\d{4}\-\d{7}$" title="0000-0000000" />
+								
+							<!-- EMAIL -->
+								<label for="email_part">Correo: </label>
+								<input type="Email" size="20" name="email_part" id ="text_form" title="email@example.com" placeholder="email@example.com" />
+									
+								
+								<?php								
+								require_once '../includes/bd_conexion.php';
+								$command_sql = "SELECT id_unid, valor_unid FROM unidades_trib";
+								require '../includes/sql.php';
+								?>
+								
+								<!-- Nivel Academico -->
+								<label>Nivel Academico</label>
+								<select name="id_nivel">
+									<option name="id_nivel" value=""> - Seleccione - </option>
+								<?php
+									while($registro=mysqli_fetch_array($result))
+									{
+								?>
+									<option name="id_nivel" value="<?php echo $registro[0] ?> "><?php echo $registro[1] ?></option>
+								<?php } ?>
+								</select><br /><br />
+								
+								<!-- Botones -->
+								<input type="submit" class="submit" value="Registrar" title="Haga clic para Registrar un Plan"  />
+
+								<input type="reset" id="reset" value="Limpiar formulario" title="Haga clic para limpiar formulario"  />
+							</section>
+						</form>
+				</div>
+				<!--Pie de página-->
+			<footer id="pie">
+				<?php require_once '../includes/pie.php'; ?>
+			</footer>
+		</div>
+	</body>
+</html>

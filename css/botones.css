@@ -1,0 +1,61 @@
+.submit, #reset 
+{
+
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 10px 0;
+    border: 1px solid #ccc;
+    background: #BFBFBF;
+    border-radius: 8px 8px 8px 8px;
+}
+.submit:hover, #reset:hover {
+    background: #ddd;
+}
+#text
+{
+	width: 200px;
+	height: 27px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 2px 0;
+    border: 1px solid #ccc;
+    background: white;
+}
+#text_form /* FORMULARIO EN GENERAL */
+{
+	height: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: white;
+}
+.text_form /* FORMULARIO EN GENERAL */
+{
+	height: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 0px 2px 0;
+    border: 1px solid #ccc;
+    background: white;
+}
+#text:hover {
+    background: #F4F4F4;
+}		
+
+button 
+{
+
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    margin: 0 10px 10px 0;
+    border: 1px solid #ccc;
+    background: #BFBFBF;
+    border-radius: 8px 8px 8px 8px;
+    
+}
+

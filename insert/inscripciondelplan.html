@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>LDSBM</title>
+        <meta charset=""utf-8""/>
+    <head> 
+	
+	<body>  
+		
+		<form method="POST" action="insertar.php"  > 
+			
+			<label for="nombreplan"> Nombre del Plan: </label>
+			<input  type="text" name="nombreplan" id="nombreplan"> <br> <br>
+			<label for= "descripcionplan"> Descripcion del Plan:</label>
+			<input type="text" name="descripcionplan" id="desc_plan"><br> <br> 
+			<label for="Tipo de Plan:"> </label>  <br>
+									 	<br> <input type="radio" name="tipoplan" value="t" checked id="tipo_plan">Taller <br>
+										<br> <input type="radio" name="tipoplan" value="c" id="tipo_plan"> Curso <br> 
+										<br> <input type="radio" name="tipoplan" value="ch" id="tipo_plan"> Charla <br>
+									
+				<label for="cantuni"> <br> Cantidad de Unidad(es) tributaria(s):</label>
+				<select name="cantuni " id="cant_uni"> <br>  
+					<option value="" selected="seected"> Seleccione</option>
+					<option value="0"> 0 </option>
+					<option value="1"> 1 </option>
+					<option value="2"> 2 </option>
+				</select>
+			
+			<br><br> <input type="submit" value="Registrar"> 
+		
+		</form>
+	</body>
+</html>
