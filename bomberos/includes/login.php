@@ -14,18 +14,19 @@
 		$_SESSION['correo']=$row['correo'];
 		$_SESSION['nombre']=$row['nombre'];
 		$_SESSION['tipo']=$row['tipo'];
-		if($_SESSION['tipo'] == 2):
-			$id= $_SESSION['iduser'];
-			$sql ="SELECT ced_part FROM participantes WHERE user='$id'";
-			$resultado=mysqli_query($mysqli,$sql);
-			$comprobar=mysqli_fetch_array($resultado);
+		//if($_SESSION['tipo'] == 2):
+			//$id= $_SESSION['iduser'];
+			//$sql ="SELECT ced_part FROM participantes WHERE user='$id'";
+			//$resultado=mysqli_query($mysqli,$sql);
+			//$comprobar=mysqli_fetch_array($resultado);
 
-			if(empty($comprobar[0]))
-				header('location:../insert/reg_part.php');
-			else 
-				header('location:../sala.php');
+			//if(empty($comprobar[0]))
+				//header('location:../insert/reg_part.php');
+			//else 
+				//header('location:../sala.php');
 
-		endif;
+		//endif;
+		mysqli_close($mysqli);
 		header('location:../sala.php');
 	} else { 
 	?>

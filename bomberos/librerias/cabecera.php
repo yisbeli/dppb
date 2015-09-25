@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,6 +11,6 @@
 <body>
 	<header>
 		<div class="container">
-			<img src="img/Imagen1.png" class="img-responsive">
+			<img src="img/sinfondo.png" class="img-responsive bg-danger" height="500px">
 		</div>
 	</header>
