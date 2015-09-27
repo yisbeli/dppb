@@ -9,7 +9,6 @@
 		elseif ($_SESSION['tipo'] == 2) :
 			include_once './librerias/nivel2.php';
 		endif;
-
 ?>
 	</div>
 <?php	include_once 'librerias/pie.php'; ?>

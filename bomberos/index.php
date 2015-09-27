@@ -14,7 +14,23 @@
 						<li><p>4. Modificar el sistema automatizado que incluye los módulos de administración, registro, control, relación de ingresos, egresos y estadística.</p></li>
 						<li><p>5. Desarrollar un plan de pruebas para verificar la calidad y operatividad del sistema.</p></li>
 					</ul>
-				</article>	
+				</article>
+				<?php
+
+					include 'includes/conexion_bd.php';
+					$sql = "SELECT * FROM tipo_plan";
+					$result = mysqli_query($mysqli, $sql);
+
+				?>
+				<form action="">
+				<legend>Planes a consultar</legend>
+					<select name="" id="" class="form-control">
+						<?php while ($consulta = mysqli_fetch_array($result)) : ?>
+							<option value="<?php echo $consulta[0]; ?>"><?php echo $consulta[1]; ?></option>
+						<?php endwhile; ?>
+					</select>
+					<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>
+				</form>
 			</div>
 			<div class="col-md-3 text-left">
 				<legend>Inicio de sesión</legend>

@@ -1,6 +1,6 @@
 <?php
 
-	include_once '../includes/config_bd.php';
+	include 'config_bd.php';
 
 	$mysqli = mysqli_connect(HOST, USER, PASSWORD, BD);
 

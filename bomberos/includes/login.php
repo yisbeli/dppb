@@ -9,7 +9,6 @@
 
 	if(mysqli_num_rows($result)==1){
 		$row=mysqli_fetch_array($result);
-		$_SESSION['log']="1";
 		$_SESSION['iduser']=$row['iduser'];
 		$_SESSION['correo']=$row['correo'];
 		$_SESSION['nombre']=$row['nombre'];
@@ -26,8 +25,7 @@
 				//header('location:../sala.php');
 
 		//endif;
-		mysqli_close($mysqli);
-		header('location:../sala.php');
+		header('location: ../sala.php');
 	} else { 
 	?>
 		<meta charset="utf-8">
