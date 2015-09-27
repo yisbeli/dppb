@@ -39,8 +39,8 @@
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
 			<legend>Planes a consultar</legend>
-			<select for='1' name='plan' class='form-control'>
-				<option> -- seleccione -- </option>
+			<select required for='1' name='plan' class='form-control'>
+				<option value=""> -- seleccione -- </option>
 		<?php	while ($consulta = mysqli_fetch_array($result)) { ?>
 					<option value="<?php echo $consulta[0]; ?>"><?php echo $consulta[1]; ?></option>
 				<?php } ?>

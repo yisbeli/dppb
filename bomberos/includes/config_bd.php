@@ -1,8 +1,8 @@
 <?php
 
-	define("HOST", "localhost");
+	define("HOST", "192.168.150.9");
 	define("USER", "root");
-	define("PASSWORD", "jorgejac");
+	define("PASSWORD", "");
 	define("BD", "dppb");
 
 ?>

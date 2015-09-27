@@ -18,7 +18,7 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planes <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a href="#">Participantes</a></li>
+			            <li><a href="planes_registro.php">Registro</a></li>
 			            <li><a href="#">Responsables</a></li>
 			          </ul>
 			        </li>
