@@ -38,8 +38,12 @@
 				<form action="includes/login.php" method="POST">
 					<input  type="email" name="usuario" class="form-control" placeholder="Usuario">
 					<input type="password" name="password" class="form-control" placeholder="Contraseña">
-					<button type="submit" class="btn btn-danger">Iniciar sesión</button>
-				</form><br><br>
+					<button type="submit" class="btn btn-danger">Iniciar sesión</button><br>
+					<a href="nuevo_usu.php" >Registrar Nueva Cuenta </a>
+
+				</form>
+				<br><br>
+
 				<form action="">
 				<legend>Planes a consultar</legend>
 					<select name="" id="" class="form-control">
