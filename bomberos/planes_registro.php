@@ -14,7 +14,7 @@
 						extract($_POST);
 						if (isset($registro)) :
 						//EXTRAEMOS Y CONECTAMOS
-						require_once '../includes/bd_conexion.php';
+						require_once 'includes/conexion_bd.php';
 						
 						$sentencia="SELECT MAX(id_unid) FROM unidades_trib";
 						$consultado=mysqli_query($mysqli,$sentencia);
@@ -30,9 +30,9 @@
 					</script>
 					<?php
 						else :
-						require_once '../includes/bd_conexion.php';
+						require_once 'includes/conexion_bd.php';
 						$command_sql = "SELECT * FROM tipo_plan";
-						require '../includes/sql.php';
+						require 'includes/sql.php';
 					?>
 					<!-- Tipo del Plan de formacion -->
 					<label>Tipo de Plan de Formacion: </label><br>

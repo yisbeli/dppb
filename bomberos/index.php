@@ -38,6 +38,7 @@
 				<form action="includes/login.php" method="POST">
 					<input  type="email" name="usuario" class="form-control" placeholder="Usuario">
 					<input type="password" name="password" class="form-control" placeholder="Contraseña">
+<<<<<<< HEAD
 					<button type="submit" class="btn btn-danger">Iniciar sesión</button><br>
 					<a href="nuevo_usu.php" >Registrar Nueva Cuenta </a>
 
@@ -47,6 +48,13 @@
 				<form action="">
 				<legend>Planes a consultar</legend>
 					<select name="" id="" class="form-control">
+=======
+					<button type="submit" class="btn btn-danger">Iniciar sesión</button>
+				</form><br><br>
+				<form action="busqueda_planes.php" method="POST">
+					<legend>Planes a consultar</legend>
+					<select name="plan" id="plan" class="form-control">
+>>>>>>> bdc6e641eb538512cca4ead15eafb1f8e81f1c22
 						<?php while ($consulta = mysqli_fetch_array($result)) : ?>
 							<option value="<?php echo $consulta[0]; ?>"><?php echo $consulta[1]; ?></option>
 						<?php endwhile; ?>

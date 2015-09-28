@@ -11,6 +11,7 @@
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
+			<legend>Resultado de la búsqueda</legend>
 			<table class="table table-bordered">
 				<tr class="bg-warning">
 					<th class="text-center">Nombre</th>
