@@ -1,0 +1,6 @@
+.boton-sin-estilo{
+	background-color: transparent;
+	border: 0px;
+	color: red;
+	cursor: pointer;
+}

@@ -40,9 +40,9 @@
 					<input type="password" name="password" class="form-control" placeholder="Contraseña">
 					<button type="submit" class="btn btn-danger">Iniciar sesión</button>
 				</form><br><br>
-				<form action="">
-				<legend>Planes a consultar</legend>
-					<select name="" id="" class="form-control">
+				<form action="busqueda_planes.php" method="POST">
+					<legend>Planes a consultar</legend>
+					<select name="plan" id="plan" class="form-control">
 						<?php while ($consulta = mysqli_fetch_array($result)) : ?>
 							<option value="<?php echo $consulta[0]; ?>"><?php echo $consulta[1]; ?></option>
 						<?php endwhile; ?>
