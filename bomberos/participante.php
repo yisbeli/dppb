@@ -15,9 +15,8 @@
 								require_once 'includes/conexion_bd.php';
 												
 								//INSERTAMOS
-								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel')";
+								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia')";
 								require 'includes/sql.php';
-								//$command_sql = "INSERT INTO planes_participantes (cod_part, cod_plan)";
 							?>
 								<script type="text/javascript">
 									alert("Participante registrado con éxito!");
@@ -28,7 +27,7 @@
 								require_once 'includes/conexion_bd.php';
 
 								//ACTUALIZAMOS
-								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel' WHERE ced_part='$ced_part'";
+								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia' WHERE ced_part='$ced_part'";
 								require 'includes/sql.php';
 						?>
 								<script type="text/javascript">
@@ -96,11 +95,11 @@
 						
 						<!-- TELÉFONO - MOVIL -->
 						<label for="tlfn_part">Teléfono: </label>
-						<input class="form-control" id="text_form" type="text" name="tlfn_part" maxlength="12" size="10" placeholder="0000-0000000" requi patter="^\d{4}\-\d{7}$" title="0000-0000000" <?php if (isset($resultado)) echo "value='$resultado[5]'"; ?> /><br>
+						<input class="form-control" id="text_form" type="text" name="tlfn_part" maxlength="12" size="10" placeholder="0000-0000000" required patter="^\d{4}\-\d{7}$" title="0000-0000000" <?php if (isset($resultado)) echo "value='$resultado[5]'"; ?> /><br>
 						
 						<!-- EMAIL -->
 						<label for="email_part">Correo: </label>
-						<input class="form-control" type="email" size="20" name="email_part" id ="text_form" title="email@example.com" <?php if (isset($resultado)) echo "value='$resultado[6]'"; ?> /><br>						
+						<input class="form-control" type="email" size="20" name="email_part" id ="text_form" title="email@example.com" placeholder="email@example.com" <?php if (isset($resultado)) echo "value='$resultado[6]'"; ?> /><br>						
 						
 						<?php								
 							require_once 'includes/conexion_bd.php';
@@ -119,7 +118,11 @@
 							<option name="id_nivel" value="<?php echo $registro[0] ?>" <?php if (isset($resultado)) if ($resultado[7] == $registro[0]) echo "selected"; ?>><?php echo $registro[1] ?></option>
 						<?php } ?>
 						</select><br>
-						
+
+						<!-- Dependencia -->
+						<label>Dependencia</label>
+						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[10]'"; ?> /><br>
+		
 						<!-- Botones -->
 						<div class="text-center">
 							<button type="submit" formaction="busqueda_planes.php" class="btn btn-danger" name="plan" value="<?php echo $plan; ?>" title="Haga click para regresar a la página anterior" >Regresar atrás</button>
