@@ -7,7 +7,6 @@
 				<form method="POST" action="">
 					<legend>Datos del participante</legend>
 					<section id="cuerpo_form">
-
 						<?php
 							//EXTRAEMOS Y CONECTAMOS
 							extract($_POST);
@@ -84,7 +83,7 @@
 
 						<input type="hidden" name="actualizar" value="<?php echo "$actualizar"; ?>" />
 						<input type="hidden" name="registro" value="<?php echo "$registro" ?>" />
-						<input type="hidden" name="cod_par" value="<?php echo "$resultado[0]" ?>">
+						<input type="hidden" name="cod_par" value="<?php if (isset($resultado)) echo "$resultado[0]" ?>">
 						<!-- Cedula del participante -->
 						<label for="ced_part">Cédula: </label>
 						<select class="form-control" name="nacionalidad"  class="nac">
@@ -154,7 +153,7 @@
 
 						<!-- Dependencia -->
 						<label>Dependencia</label>
-						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[10]'"; ?> /><br>
+						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[9]'"; ?>><br>
 
 						<!-- Botones -->
 						<div class="text-center">

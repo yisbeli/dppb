@@ -13,7 +13,6 @@
 			<legend>Resultado de la búsqueda</legend>
 			<form method="POST" action="participantes_pre_inscritos.php">
 				<input type="hidden" name="plan" value="<?php echo $plan; ?>" />
-				
 				<table class="table table-bordered">
 					<tr class="bg-warning">
 						<th class="text-center">Nombre</th>
@@ -33,7 +32,7 @@
 				</table>
 			</form>
 			<div align="center">
-				<button class="btn btn-danger" type="button" onclick=location="index.php">Regresar a la página anterior</button>
+				<button class="btn btn-danger" type="button" onclick=location="sala.php">Regresar a la página anterior</button>
 			</div><br>
 		</div>
 	</div>
