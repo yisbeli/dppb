@@ -5,7 +5,8 @@
 ?>
 <div class="container">
 	<div class="row">
-		<div class="col-md-5">
+	<div class="col-md-4"></div>
+		<div class="col-md-4">
 			<form action="busqueda_planes_participantes.php" method="POST">
 				<legend>Planes a consultar</legend>
 				<select name="plan" id="plan" class="form-control">
@@ -13,7 +14,9 @@
 						<option value="<?php echo $consulta[0]; ?>"> <?php echo $consulta[1]; ?></option>
 					<?php endwhile; ?>
 				</select>
-				<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>
+				<div class="text-center">
+					<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>					
+				</div><br>
 			</form>
 		</div>
 	</div>

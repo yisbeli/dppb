@@ -9,19 +9,24 @@
                         require_once 'includes/conexion_bd.php';
 
                         if (isset($registro)):
-                       echo "$tipo,$num_bauche,$cedula,$codigoplan";
 
-                        $command_sql="INSERT INTO expediente (copia_ced,foto,carpeta,copia_titulo,sintesis,otros,cod_part) VALUES ('$copia_ced','$foto','$carpeta','$copia_titulo','$sintesis','$otros','$cedula')";  
-                        mysqli_query($mysqli,$command_sql); 
+                            $command_sql="INSERT INTO expediente (copia_ced,foto,carpeta,copia_titulo,sintesis,otros,cod_part) VALUES ('$copia_ced','$foto','$carpeta','$copia_titulo','$sintesis','$otros','$cedula')";  
+                            mysqli_query($mysqli,$command_sql);
 
-                        $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
-                        mysqli_query($mysqli,$command_sql); 
-
-                    ?>     
+                            $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche', status='inscrito' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
+                            mysqli_query($mysqli,$command_sql);
+                    ?>
+                        <script type="text/javascript">
+                            alert("Participante inscrito con éxito!");
+                            window.location="sala.php";
+                        </script>
                     <?php else :
-                        $command_sql="SELECT cod_par FROM participantes WHERE ced_part='$registrar'";
-                        $result = mysqli_query($mysqli, $command_sql);
-                        $resultado=mysqli_fetch_array($result);
+                            $command_sql="SELECT cod_par FROM participantes WHERE ced_part='$registrar'";
+                            $result = mysqli_query($mysqli, $command_sql);
+                            $resultado=mysqli_fetch_array($result);
+                            $command_sql = "SELECT cod_part FROM expediente WHERE cod_part='$resultado[0]'";
+                            $resultado_consulta = mysqli_query($mysqli, $command_sql);
+                            if (!mysqli_num_rows($resultado_consulta)) :
                     ?>
                     <form  method="POST" action="requisitos.php">
                         <legend>Documentos consignados</legend>
@@ -41,6 +46,8 @@
                             
                             <label for="sintesis">1 SINTESIS CURRICULAR:</label>
                             <input type="checkbox" value="s" name="sintesis" required /><br>
+
+                        <?php endif; ?>
 
                             <label>Seleccione</label>
                             <select name="tipo" class="form-control">

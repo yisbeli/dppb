@@ -14,8 +14,11 @@
 								require_once 'includes/conexion_bd.php';
 
 								//INSERTAMOS
-								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia')";
-								require 'includes/sql.php';
+								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia, nomenclatura) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia', '$nacionalidad')";
+								mysqli_query($mysqli,$command_sql);
+								$command_sql = "SELECT MAX(cod_par) FROM participantes";
+								$consultado = mysqli_query($mysqli,$command_sql);
+								$resultado4 = mysqli_fetch_array($consultado);
 
 								//calculamos
 								$sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
@@ -29,8 +32,8 @@
 								$precio = ($resultado2[0] * $resultado3[4]);
 
 								//pre-inscribimos
-								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
-								require 'includes/sql.php';
+								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$resultado4[0]', '$precio')";
+								mysqli_query($mysqli,$command_sql);
 							?>
 								<script type="text/javascript">
 									alert("Participante registrado con éxito!");
@@ -41,7 +44,7 @@
 								require_once 'includes/conexion_bd.php';
 
 								//ACTUALIZAMOS
-								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia' WHERE ced_part='$ced_part'";
+								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia', nomenclatura='$nacionalidad' WHERE ced_part='$ced_part'";
 								require 'includes/sql.php';
 
 								//calculamos
@@ -57,7 +60,7 @@
 
 								//pre-inscribimos
 								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
-								require 'includes/sql.php';
+								mysqli_query($mysqli,$command_sql);
 						
 						?>
 								<script type="text/javascript">

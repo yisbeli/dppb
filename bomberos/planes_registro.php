@@ -1,6 +1,4 @@
 <?php include_once 'librerias/cabecera.php';
-	session_destroy();
-	session_unset();
 ?>
 	<div class="container">
 	<?php 	include_once 'librerias/menu.php'; ?>
