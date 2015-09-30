@@ -13,9 +13,24 @@
 							extract($_POST);
 							if (isset($actualizar) AND $actualizar == "No") :
 								require_once 'includes/conexion_bd.php';
-												
+
 								//INSERTAMOS
 								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia')";
+								require 'includes/sql.php';
+
+								//calculamos
+								$sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
+								$consultado=mysqli_query($mysqli,$sentencia);
+								$resultado2=mysqli_fetch_array($consultado);
+
+								$command_sql = "SELECT * FROM planes WHERE cod_plan='$registro'";
+								$consultado=mysqli_query($mysqli,$command_sql);
+								$resultado3=mysqli_fetch_array($consultado);
+
+								$precio = ($resultado2[0] * $resultado3[4]);
+
+								//pre-inscribimos
+								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
 								require 'includes/sql.php';
 							?>
 								<script type="text/javascript">
@@ -29,6 +44,22 @@
 								//ACTUALIZAMOS
 								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia' WHERE ced_part='$ced_part'";
 								require 'includes/sql.php';
+
+								//calculamos
+								$sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
+								$consultado=mysqli_query($mysqli,$sentencia);
+								$resultado2=mysqli_fetch_array($consultado);
+
+								$command_sql = "SELECT * FROM planes WHERE cod_plan='$registro'";
+								$consultado=mysqli_query($mysqli,$command_sql);
+								$resultado3=mysqli_fetch_array($consultado);
+
+								$precio = ($resultado2[0] * $resultado3[4]);
+
+								//pre-inscribimos
+								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
+								require 'includes/sql.php';
+						
 						?>
 								<script type="text/javascript">
 									alert("Participante registrado con éxito!");
@@ -52,6 +83,8 @@
 						?>
 
 						<input type="hidden" name="actualizar" value="<?php echo "$actualizar"; ?>" />
+						<input type="hidden" name="registro" value="<?php echo "$registro" ?>" />
+						<input type="hidden" name="cod_par" value="<?php echo "$resultado[0]" ?>">
 						<!-- Cedula del participante -->
 						<label for="ced_part">Cédula: </label>
 						<select class="form-control" name="nacionalidad"  class="nac">
@@ -122,7 +155,7 @@
 						<!-- Dependencia -->
 						<label>Dependencia</label>
 						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[10]'"; ?> /><br>
-		
+
 						<!-- Botones -->
 						<div class="text-center">
 							<button type="submit" formaction="busqueda_planes.php" class="btn btn-danger" name="plan" value="<?php echo $plan; ?>" title="Haga click para regresar a la página anterior" >Regresar atrás</button>
