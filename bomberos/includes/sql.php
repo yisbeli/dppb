@@ -3,8 +3,7 @@
 	
 	if(mysqli_errno ($mysqli) > 0)
 	{
-		printf
-		(
+		printf(
 			"<h2>Error en la base de datos</h2>
 			<b>Número de error: </b>%d<br />
 			<b>Mensaje de error: </b>%s<br />",
