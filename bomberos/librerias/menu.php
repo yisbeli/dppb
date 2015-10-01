@@ -21,6 +21,7 @@
 			            <li><a href="planes_registro.php">Registro plan de formacion</a></li>
 			            <li><a href="tipo_plan.php">Registro del tipo de plan</a></li>
 			            <li><a href="ingresos.php">Estadísticas</a></li>
+			            <li><a href="asignacion_planes.php">Asignación de planes</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
