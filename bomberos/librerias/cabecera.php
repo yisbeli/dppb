@@ -12,6 +12,6 @@
 <body>
 	<header>
 		<div class="container">
-			<img src="img/sinfondo.png" class="img-responsive bg-danger" height="500px">
+			<img src="img/sinfondo.png" class="img-responsive color-sistema" height="500px">
 		</div>
 	</header>
