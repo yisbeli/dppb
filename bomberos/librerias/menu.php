@@ -20,7 +20,10 @@
 			          <ul class="dropdown-menu">
 			            <li><a href="planes_registro.php">Registro plan de formacion</a></li>
 			            <li><a href="tipo_plan.php">Registro del tipo de plan</a></li>
+<<<<<<< HEAD
+=======
 			            <li><a href="ingresos.php">Estadísticas</a></li>
+>>>>>>> 57ded5659f8eb1278f04db5bc8ca6a5aada34df5
 			          </ul>
 			        </li>
 			        <li class="dropdown">
