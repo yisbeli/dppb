@@ -3,7 +3,7 @@
 	include 'includes/conexion_bd.php';
 	extract($_POST);
 
-	$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
+	$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid, p.tipo_plan FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
 	$result = mysqli_query($mysqli, $sql);
 	
 ?>
@@ -27,7 +27,7 @@
 							<td class='text-center'>$consulta[0]</td>
 							<td class='text-center'>$consulta[1]</td>
 							<td class='text-center'>$consulta[2]</td>
-							<td class='text-center' width='18%'><button type='submit' name='registro' value='$consulta[0]' class='boton-sin-estilo'>Pre-inscribir</button></td>
+							<td class='text-center' width='18%'><button type='submit' name='registro' value='$consulta[3]' class='boton-sin-estilo'>Pre-inscribir</button></td>
 						</tr>";
 					endwhile; ?>
 				</table>

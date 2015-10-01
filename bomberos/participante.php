@@ -156,13 +156,7 @@
 
 						<!-- Dependencia -->
 						<label>Dependencia</label>
-<<<<<<< HEAD
-						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[10]'"; ?> /><br>
-		
-=======
 						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[9]'"; ?>><br>
-
->>>>>>> 57ded5659f8eb1278f04db5bc8ca6a5aada34df5
 						<!-- Botones -->
 						<div class="text-center">
 							<button type="submit" formaction="busqueda_planes.php" class="btn btn-danger" name="plan" value="<?php echo $plan; ?>" title="Haga click para regresar a la página anterior" >Regresar atrás</button>
