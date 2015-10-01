@@ -1,7 +1,7 @@
-	<footer>
+	<footer id="pie">
 		<div class="container">
 			<p class="bg-danger text-center">
-				&copy; <?php echo date("Y"); ?> DPP Bomberos del Estado Mérida - Venezuela<br />
+				&copy; <?php echo date("Y"); ?> Direccion Estadal del Cuerpo de Bomberos del Estado Bolivariano Mérida - Venezuela<br />
 				<b>Universidad Politécnica Territorial de Mérida "Kléber Ramírez"</b>
 			</p>
 		</div>

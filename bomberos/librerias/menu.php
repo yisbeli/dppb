@@ -18,8 +18,8 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planes <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a href="planes_registro.php">Registro</a></li>
-			            <li><a href="#">Responsables</a></li>
+			            <li><a href="planes_registro.php">Registro plan de formacion</a></li>
+			            <li><a href="tipo_plan.php">Registro del tipo de plan</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">

@@ -7,9 +7,7 @@
 		if ($_SESSION['tipo'] == 1) :
 			include_once 'librerias/nivel1.php';
 		elseif ($_SESSION['tipo'] == 2) :
-
-		elseif ($_SESSION['tipo'] == 3) :
-			include_once './librerias/nivel3.php';
+			include_once './librerias/nivel2.php';
 		endif;
 ?>
 	</div>
