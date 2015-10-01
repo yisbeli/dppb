@@ -1,7 +1,4 @@
-<?php include_once 'librerias/cabecera.php';
-	session_destroy();
-	session_unset();
-?>
+<?php include_once 'librerias/cabecera.php';?>
 	<div class="container">
 		<div class="rows">
 			<div class="col-md-3"></div>
@@ -29,7 +26,11 @@
 							<script type="text/javascript">
 							alert("	No coinciden las claves ingresadas!");
 							window.location="nuevo_usu.php";
+<<<<<<< HEAD
 						</script>
+=======
+							</script>
+>>>>>>> 57ded5659f8eb1278f04db5bc8ca6a5aada34df5
 						<?php 
 							endif;
 

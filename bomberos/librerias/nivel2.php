@@ -46,9 +46,15 @@
 					<option value="<?php echo $consulta[0]; ?>"><?php echo $consulta[1]; ?></option>
 				<?php } ?>
 			</select>
+<<<<<<< HEAD
 			<div class="text-right">
 				<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>
 			</div>
+=======
+			<div class="text-center">
+				<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>
+			</div><br>
+>>>>>>> 57ded5659f8eb1278f04db5bc8ca6a5aada34df5
 		</div>
 	</div>
 </form>
