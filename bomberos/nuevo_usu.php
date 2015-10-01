@@ -24,13 +24,9 @@
 							if($clave1 != $clave2): ?>
 
 							<script type="text/javascript">
-							alert("	No coinciden las claves ingresadas!");
-							window.location="nuevo_usu.php";
-<<<<<<< HEAD
-						</script>
-=======
+								alert("	No coinciden las claves ingresadas!");
+								window.location="nuevo_usu.php";
 							</script>
->>>>>>> 57ded5659f8eb1278f04db5bc8ca6a5aada34df5
 						<?php 
 							endif;
 

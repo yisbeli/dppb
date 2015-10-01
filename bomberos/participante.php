@@ -14,10 +14,6 @@
 								require_once 'includes/conexion_bd.php';
 
 								//INSERTAMOS
-<<<<<<< HEAD
-								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia')";
-								require 'includes/sql.php';
-=======
 								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia, nomenclatura) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia', '$nacionalidad')";
 								mysqli_query($mysqli,$command_sql);
 								$command_sql = "SELECT MAX(cod_par) FROM participantes";
@@ -38,7 +34,6 @@
 								//pre-inscribimos
 								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$resultado4[0]', '$precio')";
 								mysqli_query($mysqli,$command_sql);
->>>>>>> 57ded5659f8eb1278f04db5bc8ca6a5aada34df5
 							?>
 								<script type="text/javascript">
 									alert("Participante registrado con éxito!");
@@ -49,11 +44,7 @@
 								require_once 'includes/conexion_bd.php';
 
 								//ACTUALIZAMOS
-<<<<<<< HEAD
-								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia' WHERE ced_part='$ced_part'";
-=======
 								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia', nomenclatura='$nacionalidad' WHERE ced_part='$ced_part'";
->>>>>>> 57ded5659f8eb1278f04db5bc8ca6a5aada34df5
 								require 'includes/sql.php';
 
 								//calculamos
