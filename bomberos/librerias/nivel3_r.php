@@ -3,8 +3,9 @@
 	include 'includes/conexion_bd.php';
 	extract($_POST);
 
-		$sql = "SELECT * FROM planes WHERE tipo_plan='$plan'";
-		$result = mysqli_query($mysqli, $sql);
+	$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
+	$result = mysqli_query($mysqli, $sql);
+	
 ?>
 	<div class="row">
 		<div class="col-md-2"></div>
@@ -23,9 +24,9 @@
 					<?php while ($consulta = mysqli_fetch_array($result)) :
 						echo "
 						<tr>
+							<td class='text-center'>$consulta[0]</td>
+							<td class='text-center'>$consulta[1]</td>
 							<td class='text-center'>$consulta[2]</td>
-							<td class='text-center'>$consulta[3]</td>
-							<td class='text-center'>$consulta[4]</td>
 							<td class='text-center' width='18%'><button type='submit' name='registro' value='$consulta[0]' class='boton-sin-estilo'>Pre-inscribir</button></td>
 						</tr>";
 					endwhile; ?>

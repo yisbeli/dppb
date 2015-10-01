@@ -5,8 +5,8 @@
 
 	if (isset($consulta2)) :
 
-		$sql = "SELECT * FROM planes WHERE tipo_plan='$plan'";
-		$result = mysqli_query($mysqli, $sql);
+	$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
+	$result = mysqli_query($mysqli, $sql);
 ?>
 	<div class="row">
 		<div class="col-md-2"></div>
