@@ -21,14 +21,38 @@
                         if (!isset($num_bauche)){
                             $num_bauche = "";
                         }
-                        $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche', status='inscrito' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
+
+                        $sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
+                         $consultado=mysqli_query($mysqli,$sentencia);
+                         $resultado2=mysqli_fetch_array($consultado);
+
+                         $consulta="SELECT cant_unid FROM planes WHERE cod_plan='$codigoplan'";
+                          $consul=mysqli_query($mysqli,$consulta);
+                          $resul=mysqli_fetch_array($consul);
+
+                          $precio=$resultado2[0]*$resul[0];
+
+                     echo "$codigoplan, $precio, $resultado2[0],$resul[0]"; 
+
+                        //actualizamos 
+                        $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche', precio='$precio',status='inscrito' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
                         mysqli_query($mysqli,$command_sql);
+
                 ?>
-                    <script type="text/javascript">
-                        alert("Participante inscrito con éxito!");
-                        window.location="sala.php";
-                    </script>
-                <?php else :
+                <?php 
+                        elseif (isset($eliminar)) :
+                            
+                            $sql = "DELETE FROM planes_participantes WHERE cod_par='$cedula'";
+                            if(mysqli_query($mysqli,$sql))
+                            ?>
+                            <script type="text/javascript">
+                                alert("Participante PRE-INSCRITO eliminado satisfactoriamente!");
+                                window.location="participantes_pre_inscritos.php";
+                            </script>
+                <?php
+
+                        
+                else :
                         echo '<form  method="POST" action="requisitos.php">';
                         $command_sql = "SELECT cod_par FROM participantes WHERE ced_part='$registrar'";
                         $result = mysqli_query($mysqli, $command_sql);
@@ -67,6 +91,7 @@
                             <option value="Si">Exonerado</option>
                         </select><br>
                          
+                         <label>Numero de bauche</label>
                          <input class="form-control" id="text_form" type="text" maxlength="30" name="num_bauche" placeholder="Ingrese el numero del bauche" patter="^[a-zA-Z]{3,15}" title="Ingrese el numero del bauche del deposito"/><br>
 
                          <label>Otro documento</label>
@@ -75,6 +100,7 @@
                     <div class="text-center">
                             <button type="reset" class="btn btn-warning" name="limpiar" value="Registrar" title="Limpiar datos seleccionados" >Limpiar datos</button>
                             <button type="submit" name="registro" value="registro" title="Haga clic para guardar los datos del expediente" class="btn btn-warning">Guardar datos</button>
+                            <button type="submit" name="eliminar" value="eliminar" title="Haga clic para cancelar la inscripcion" class="btn btn-warning">Cancelar inscripcion</button>
                     </div><br><br>
                 </form>
             </div>

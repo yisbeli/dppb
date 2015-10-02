@@ -32,7 +32,7 @@
 					endwhile; ?>
 				</table>
 				<div align="center">
-					<button class="btn btn-danger" type="button" onclick=location="sala.php">Regresar a la página anterior</button>
+					<button class="btn btn-warning" type="button" onclick=location="busqueda_planes_participantes.php">Regresar a la página anterior</button>
 				</div><br>
 			</form>
 		</div>
