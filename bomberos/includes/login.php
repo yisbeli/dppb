@@ -31,7 +31,7 @@
 		<meta charset="utf-8">
 		<script type="text/javascript">
 		alert("Nombre de usuario o contraseña incorrectos");
-		location.href="../iniciar_sesion.php";
+		location.href="../index.php";
 		</script>
 	<?php
 	}

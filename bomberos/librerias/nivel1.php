@@ -11,7 +11,7 @@
 				<legend>Planes a consultar</legend>
 				<select name="plan" id="plan" class="form-control">
 					<?php while ($consulta = mysqli_fetch_array($result)) : ?>
-						<option value="<?php echo $consulta[0]; ?>"> <?php echo $consulta[1]; ?></option>
+						<option value="<?php echo $consulta[0]; ?>"><?php echo $consulta[1]; ?></option>
 					<?php endwhile; ?>
 				</select>
 				<div class="text-center">
