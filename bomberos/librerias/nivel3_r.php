@@ -32,8 +32,8 @@
 					endwhile; ?>
 				</table>
 			</form>
-			<div align="center">
-				<button class="btn btn-danger" type="button" onclick=location="index.php">Regresar a la página anterior</button>
+			<div align="text-center">
+				<button class="btn btn-warning" type="button" onclick=location="index.php">Regresar a la página anterior</button>
 			</div><br>
 		</div>
 	</div>

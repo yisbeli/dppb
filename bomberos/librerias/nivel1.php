@@ -15,7 +15,7 @@
 					<?php endwhile; ?>
 				</select>
 				<div class="text-center">
-					<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>					
+					<button type="submit" name="consulta2" class="btn btn-warning">Consultar</button>					
 				</div><br>
 			</form>
 		</div>

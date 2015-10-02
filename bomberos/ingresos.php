@@ -1,5 +1,6 @@
 <?php	include_once 'librerias/cabecera.php'; ?>
 	<div class="container">
+	<?php 	include_once 'librerias/menu.php'; ?>
 	<div class="rows">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
@@ -19,7 +20,7 @@
 				<?php } ?>
 				</select>
 				<div class="text-center">
-					<button type="submit" name="submit" class="btn btn-danger">Enviar</button>					
+					<button type="submit" name="submit" class="btn btn-warning">Enviar</button>					
 				</div><br>
 			</form>
 		</div>

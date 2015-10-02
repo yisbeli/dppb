@@ -159,9 +159,9 @@
 						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[9]'"; ?>><br>
 						<!-- Botones -->
 						<div class="text-center">
-							<button type="submit" formaction="busqueda_planes.php" class="btn btn-danger" name="plan" value="<?php echo $plan; ?>" title="Haga click para regresar a la página anterior" >Regresar atrás</button>
-							<button type="reset" class="btn btn-danger" name="limpiar" value="Registrar" title="Haga click para registrar un plan" >Limpiar formulario</button>
-							<button type="submit" class="btn btn-danger" value="<?php echo $actualizar; ?>" title="Haga clic para registrar un plan" >Confirmar pre-inscripcion</button>
+							<button type="submit" formaction="busqueda_planes.php" class="btn btn-warning" name="plan" value="<?php echo $plan; ?>" title="Haga click para regresar a la página anterior" >Regresar atrás</button>
+							<button type="reset" class="btn btn-warning" name="limpiar" value="Registrar" title="Haga click para registrar un plan" >Limpiar formulario</button>
+							<button type="submit" class="btn btn-warning" value="<?php echo $actualizar; ?>" title="Haga clic para registrar un plan" >Confirmar pre-inscripcion</button>
 						</div><br>
 					</section>
 				</form>	

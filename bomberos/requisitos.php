@@ -64,8 +64,8 @@
                     
                     
                     <div class="text-center">
-                            <button type="reset" class="btn btn-danger" name="limpiar" value="Registrar" title="Limpiar datos seleccionados" >Limpiar datos</button>
-                            <button type="submit" name="registro" value="registro" title="Haga clic para guardar los datos del expediente" class="btn btn-danger">Guardar datos</button>
+                            <button type="reset" class="btn btn-warning" name="limpiar" value="Registrar" title="Limpiar datos seleccionados" >Limpiar datos</button>
+                            <button type="submit" name="registro" value="registro" title="Haga clic para guardar los datos del expediente" class="btn btn-warning">Guardar datos</button>
                     </div><br><br>
                  </form>
             </div>

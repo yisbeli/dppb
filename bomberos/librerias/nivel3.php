@@ -47,7 +47,7 @@
 				<?php } ?>
 			</select>
 			<div class="text-right">
-				<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>
+				<button type="submit" name="consulta2" class="btn btn-warning">Consultar</button>
 			</div>
 		</div>
 	</div>

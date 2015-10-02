@@ -13,8 +13,10 @@
 				?>
 				<form action="includes/login.php" method="POST">
 					<input  type="email" name="usuario" class="form-control" placeholder="Usuario">
-					<input type="password" name="password" class="form-control" placeholder="Contraseña">
-					<button type="submit" class="btn btn-danger">Iniciar sesión</button><br><br>
+					<input type="password" name="password" class="form-control" placeholder="Contraseña"><br>
+					<div class="text-center">
+						<button type="submit" class="btn btn-warning">Iniciar sesión</button><br><br>
+					</div>
 					<a href="nuevo_usu.php" >Registrar Nueva Cuenta </a>
 				</form>
 				<br><br>
@@ -24,8 +26,10 @@
 						<?php while ($consulta = mysqli_fetch_array($result)) : ?>
 							<option value="<?php echo $consulta[0]; ?>"> <?php echo $consulta[1]; ?></option>
 						<?php endwhile; ?>
-					</select>
-					<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>
+					</select><br>
+					<div class="text-center">
+						<button type="submit" name="consulta2" class="btn btn-warning">Consultar</button>
+					</div>
 				</form>
 			</div>
 			<div class="col-md-9">

@@ -43,7 +43,7 @@
 					</table>
 				</form>
 				<div class="text-center">
-					<button class="btn btn-danger" type="button" onclick=location="ingresos.php">Regresar a la pagina principal</button>					
+					<button class="btn btn-warning" type="button" onclick=location="ingresos.php">Regresar a la pagina principal</button>					
 				</div><br>
 			</div>
 		</div>
