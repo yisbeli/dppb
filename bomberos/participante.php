@@ -58,15 +58,14 @@
 
 								$precio = ($resultado2[0] * $resultado3[4]);
 
+								echo "$registro, $cod_par, $precio";
+
 								//pre-inscribimos
 								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
 								mysqli_query($mysqli,$command_sql);
 						
 						?>
-								<script type="text/javascript">
-									alert("Participante registrado con éxito!");
-									window.location="index.php";
-								</script>
+								
 						<?php
 							elseif (!isset($actualizar)) :
 								if (isset($cedula)) :
@@ -88,13 +87,13 @@
 						<input type="hidden" name="registro" value="<?php echo "$registro" ?>" />
 						<input type="hidden" name="cod_par" value="<?php if (isset($resultado)) echo "$resultado[0]" ?>">
 						<!-- Cedula del participante -->
-						<label for="ced_part">Cédula: </label>
+						<label for="ced_part">Nacionalidad: </label>
 						<select class="form-control" name="nacionalidad"  class="nac">
 							<option value=""> -- seleccione -- </option>
 							<option name="nacionalidad" value="V" <?php if (isset($resultado)) if ($resultado[9] == "V") echo "selected"; ?>> V </option>
 							<option name="nacionalidad" value="E" <?php if (isset($resultado)) if ($resultado[9] == "E") echo "selected"; ?>> E </option>
 						</select>
-						<label class="guion"> - </label>
+						<label class="guion">Cédula: </label>
 						<input class="form-control" id="text_form" class="cedula" type="text" name="ced_part" maxlength="8" size="6" placeholder="00000000" requi patter="^\d{8}" title="Ejemplo: V-00000000" <?php if (isset($resultado)) { echo "value='$resultado[1]'"; } elseif (isset($cedula)) { echo "value='$cedula'"; }?> /><br>
 						
 						<!-- Nombre del participante -->

@@ -45,7 +45,7 @@
 		<?php	while ($consulta = mysqli_fetch_array($result)) { ?>
 					<option value="<?php echo $consulta[0]; ?>"><?php echo $consulta[1]; ?></option>
 				<?php } ?>
-			</select>
+			</select><br>
 			<div class="text-center">
 				<button type="submit" name="consulta2" class="btn btn-warning">Consultar</button>
 			</div><br>
