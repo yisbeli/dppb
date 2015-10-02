@@ -3,7 +3,7 @@
 	include 'includes/conexion_bd.php';
 	extract($_POST);
 
-	$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid, p.tipo_plan FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
+	$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid, p.tipo_plan FROM planes p, planes_responsables pr WHERE pr.status='por-iniciar' AND pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
 	$result = mysqli_query($mysqli, $sql);
 	
 ?>

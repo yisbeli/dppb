@@ -2,6 +2,8 @@
 	<div class="container">
 <?php
 
+	include_once 'librerias/actualizacion.php';
+
 	include_once 'librerias/menu.php';
 
 		if ($_SESSION['tipo'] == 1) :

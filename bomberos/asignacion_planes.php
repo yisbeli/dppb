@@ -18,7 +18,7 @@
 <?php
 	
 	elseif (isset($consulta2)) : 
-		$sql = "SELECT * FROM planes p WHERE p.tipo_plan='$plan'";
+		$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid, pr.id FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
 		$result = mysqli_query($mysqli, $sql);
 		$sql = "SELECT * FROM responsables";
 		$resultado = mysqli_query($mysqli, $sql);
@@ -42,10 +42,10 @@
 						<?php while ($consulta = mysqli_fetch_array($result)) :
 							echo "
 							<tr>
+								<td class='text-center'>$consulta[0]</td>
+								<td class='text-center'>$consulta[1]</td>
 								<td class='text-center'>$consulta[2]</td>
-								<td class='text-center'>$consulta[3]</td>
-								<td class='text-center'>$consulta[4]</td>
-								<td class='text-center'><input type='radio' name='codigoplan' value='$consulta[0]' class='' /></td>
+								<td class='text-center'><input type='radio' name='codigoplan' value='$consulta[3]' class='' /></td>
 							</tr>";
 						endwhile; ?>
 					</table>
