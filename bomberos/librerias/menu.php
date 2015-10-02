@@ -20,6 +20,7 @@
 			          <ul class="dropdown-menu">
 			            <li><a href="planes_registro.php">Registro plan de formacion</a></li>
 			            <li><a href="tipo_plan.php">Registro del tipo de plan</a></li>
+<<<<<<< HEAD
 			            
 			          </ul>
 			        </li>
@@ -30,6 +31,10 @@
 			            <li><a href="ingresos_plan.php">Ingreso Total</a></li>
 			            <li><a href="egresos_registro.php">Registro de los egresos</a></li>
 			      
+=======
+			            <li><a href="ingresos.php">Estadísticas</a></li>
+			            <li><a href="asignacion_planes.php">Asignación de planes</a></li>
+>>>>>>> 9a70ebb16401207e6c1d3f8410e000fe8d150669
 			          </ul>
 			        </li>
 			        <li class="dropdown">
