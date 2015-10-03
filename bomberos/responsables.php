@@ -20,8 +20,7 @@
 		window.location="sala.php";
 	</script>
 	<?php
-	else :
-		include_once 'librerias/menu.php'; ?>
+	else : ?>
 		<div class="rows">
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
