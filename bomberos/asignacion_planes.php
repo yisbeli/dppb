@@ -10,7 +10,7 @@
 		mysqli_query($mysqli, $sql);
 ?>
 <script type="text/javascript">
-	alert("Se ha asignado un nuevo curso con éxito");
+	alert("Se ha asignado un plan de formación con éxito");
 	window.location="asignacion_planes.php";
 </script>
 
