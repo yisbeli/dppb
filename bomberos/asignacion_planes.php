@@ -11,7 +11,7 @@
 ?>
 <script type="text/javascript">
 	alert("Se ha asignado un nuevo curso con éxito");
-	window.location="sala.php";
+	window.location="asignacion_planes.php";
 </script>
 
 <?php
