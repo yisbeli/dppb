@@ -26,15 +26,16 @@
 					 </script>
 					<?php else : ?>
 
-						<h3>Tipo de Planes</h3>
+						<h3>Tipo de planes</h3>
 						<label for="nomb_plan">Nombres: </label>
 						<input class="form-control" type="text" maxlength="90" name="nomb_plan" placeholder="Ingrese Nombre del Plan" required patter="^[a-zA-Z]{3,15}" title="Ingrese nombre del tipo de plan" />
 						<br>
-						<label>Evaluacion</label>
+						<label>Evaluacion: </label>
 						<select name="Evaluacion" class="form-control">
 							<option value="si">Si</option>
 							<option value="no">No</option>
 						</select>
+						<br>
 
 
 						<div class="buttons text-center">

@@ -12,12 +12,12 @@
 					$result = mysqli_query($mysqli, $sql);
 				?>
 				<form action="includes/login.php" method="POST">
-					<input  type="email" name="usuario" class="form-control" placeholder="Usuario">
+					<input  type="email" name="usuario" class="form-control" placeholder="Correo">
 					<input type="password" name="password" class="form-control" placeholder="Contraseña"><br>
 					<div class="text-center">
 						<button type="submit" class="btn btn-warning">Iniciar sesión</button><br><br>
 					</div>
-					<a href="nuevo_usu.php" >Registrar Nueva Cuenta </a>
+					<a href="nuevo_usu.php" >Registrar nueva cuenta </a>
 				</form>
 				<br><br>
 				<form action="busqueda_planes.php" method="POST">
