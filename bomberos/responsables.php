@@ -4,7 +4,7 @@
 	<?php extract($_POST);
 	if (isset($resgistrar)) :
 		include 'includes/conexion_bd.php';
-		$sql = "INSERT INTO responsables (ced_resp, nomb_resp, apell_resp, espe_resp, id_nivel, id_tipo) VALUES ('$ced_resp', '$nomb_resp', 'apell_resp', '$espe_resp', '$nivel', '$tipo')";
+		$sql = "INSERT INTO responsables (ced_resp, nomb_resp, apell_resp, espe_resp, id_nivel, id_tipo) VALUES ('$ced_resp', '$nomb_resp', '$apell_resp', '$espe_resp', '$nivel', '$tipo')";
 		mysqli_query($mysqli, $sql);
 
 		$sql = "SELECT MAX(cod_resp) FROM responsables";
