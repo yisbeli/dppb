@@ -18,8 +18,9 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planes <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a href="planes_registro.php">Registro plan de formacion</a></li>
 			            <li><a href="tipo_plan.php">Registro del tipo de plan</a></li>
+			            <li><a href="planes_registro.php">Registro plan de formacion</a></li>
+			            <li><a href="asignacion_planes.php">Asignación de planes</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
@@ -29,7 +30,6 @@
 			            <li><a href="ingresos_plan.php">Ingreso Total</a></li>
 			            <li><a href="egresos_registro.php">Registro de los egresos</a></li>
 			            <li><a href="ingresos.php">Estadísticas</a></li>
-			            <li><a href="asignacion_planes.php">Asignación de planes</a></li>
 			          </ul>
 			        </li>
 			        <li class="dropdown">
