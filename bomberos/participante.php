@@ -58,13 +58,9 @@
 
 								$precio = ($resultado2[0] * $resultado3[4]);
 
-								echo "$registro, $cod_par, $precio";
-
 								//pre-inscribimos
-								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
-								mysqli_query($mysqli,$command_sql);
-						
-						?>
+								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$resultado4[0]', '$precio')";
+								mysqli_query($mysqli,$command_sql);						?>
 								
 						<?php
 							elseif (!isset($actualizar)) :
