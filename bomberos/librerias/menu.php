@@ -18,7 +18,7 @@
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planes <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
-			            <li><a href="tipo_plan.php">Registro del tipo de plan</a></li>
+			            <li><a href="tipo_plan.php">Registro de tipos de planes</a></li>
 			            <li><a href="planes_registro.php">Registro plan de formacion</a></li>
 			            <li><a href="asignacion_planes.php">Asignación de planes</a></li>
 			          </ul>
@@ -45,6 +45,10 @@
 			      <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herramientas <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
+			            <li><a href="nivel_academico.php">Nivel académico</a></li>
+			            <li><a href="cargo_institucional.php">Cargo en la institución</a></li>
+			            <li><a href="unidades_tributarias.php">Unidades tributarias</a></li>
+			          	<li role="separator" class="divider"></li>
 			            <li><a href="#"></a></li>
 			            <li><a href="#">Aceptación de usuario</a></li>
 			            <li><a href="#">Cambio de clave</a></li>
