@@ -1,6 +1,4 @@
 <?php include_once 'librerias/cabecera.php';
-	session_destroy();
-	session_unset();
 ?>
 	<div class="container">
 	<?php 	include_once 'librerias/menu.php'; ?>
@@ -59,8 +57,8 @@
 					
 					<!-- Botones --><br>
 					<div class="buttons" align="center">
-						<buton class="btn btn-danger" type="reset" title="Haga clic para limpiar formulario" >Limpiar formulario</buton>
-						<button type="submit" name="registro" value="registro" title="Haga clic para Registrar un Plan" class="btn btn-danger">Registrar plan</button>
+						<buton class="btn btn-warning" type="reset" title="Haga clic para limpiar formulario" >Limpiar formulario</buton>
+						<button type="submit" name="registro" value="registro" title="Haga clic para Registrar un Plan" class="btn btn-warning">Registrar plan</button>
 					</div>
 				</form>
 			</div>

@@ -23,12 +23,23 @@
 			          </ul>
 			        </li>
 			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estadisticas <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			           <li><a href="ingresos.php">Ingresos por tipo de plan</a></li>
+			            <li><a href="ingresos_plan.php">Ingreso Total</a></li>
+			            <li><a href="egresos_registro.php">Registro de los egresos</a></li>
+			            <li><a href="ingresos.php">Estadísticas</a></li>
+			            <li><a href="asignacion_planes.php">Asignación de planes</a></li>
+			          </ul>
+			        </li>
+			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
 			            <li><a href="#">Servicios Operacionales</a></li>
 			            <li><a href="#">Pacientes</a></li>
 			          </ul>
 			        </li>
+
 			      </ul>
 			      <ul class="nav navbar-nav navbar-right">
 			      <li class="dropdown">

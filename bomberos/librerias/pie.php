@@ -1,6 +1,6 @@
 	<footer id="pie">
 		<div class="container">
-			<p class="bg-danger text-center">
+			<p class="color-sistema pie-padding text-center">
 				&copy; <?php echo date("Y"); ?> Direccion Estadal del Cuerpo de Bomberos del Estado Bolivariano Mérida - Venezuela<br />
 				<b>Universidad Politécnica Territorial de Mérida "Kléber Ramírez"</b>
 			</p>

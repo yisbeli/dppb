@@ -7,16 +7,33 @@
 				<form method="POST" action="">
 					<legend>Datos del participante</legend>
 					<section id="cuerpo_form">
-
 						<?php
 							//EXTRAEMOS Y CONECTAMOS
 							extract($_POST);
 							if (isset($actualizar) AND $actualizar == "No") :
 								require_once 'includes/conexion_bd.php';
-												
+
 								//INSERTAMOS
-								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia')";
-								require 'includes/sql.php';
+								$command_sql = "INSERT INTO participantes (ced_part, nomb_part, apell_part, profe_part, tlfn_part, email_part, id_nivel,dependencia, nomenclatura) VALUES ('$ced_part','$nomb_part','$apell_part','$profe_part','$tlfn_part','$email_part','$id_nivel','$dependencia', '$nacionalidad')";
+								mysqli_query($mysqli,$command_sql);
+								$command_sql = "SELECT MAX(cod_par) FROM participantes";
+								$consultado = mysqli_query($mysqli,$command_sql);
+								$resultado4 = mysqli_fetch_array($consultado);
+
+								//calculamos
+								$sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
+								$consultado=mysqli_query($mysqli,$sentencia);
+								$resultado2=mysqli_fetch_array($consultado);
+
+								$command_sql = "SELECT * FROM planes WHERE cod_plan='$registro'";
+								$consultado=mysqli_query($mysqli,$command_sql);
+								$resultado3=mysqli_fetch_array($consultado);
+
+								$precio = ($resultado2[0] * $resultado3[4]);
+
+								//pre-inscribimos
+								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$resultado4[0]', '$precio')";
+								mysqli_query($mysqli,$command_sql);
 							?>
 								<script type="text/javascript">
 									alert("Participante registrado con éxito!");
@@ -27,13 +44,28 @@
 								require_once 'includes/conexion_bd.php';
 
 								//ACTUALIZAMOS
-								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia' WHERE ced_part='$ced_part'";
+								$command_sql = "UPDATE participantes SET ced_part='$ced_part', nomb_part='$nomb_part', apell_part='$apell_part', profe_part='$profe_part', tlfn_part='$tlfn_part', email_part='$email_part', id_nivel='$id_nivel', dependencia='$dependencia', nomenclatura='$nacionalidad' WHERE ced_part='$ced_part'";
 								require 'includes/sql.php';
+
+								//calculamos
+								$sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
+								$consultado=mysqli_query($mysqli,$sentencia);
+								$resultado2=mysqli_fetch_array($consultado);
+
+								$command_sql = "SELECT * FROM planes WHERE cod_plan='$registro'";
+								$consultado=mysqli_query($mysqli,$command_sql);
+								$resultado3=mysqli_fetch_array($consultado);
+
+								$precio = ($resultado2[0] * $resultado3[4]);
+
+								echo "$registro, $cod_par, $precio";
+
+								//pre-inscribimos
+								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
+								mysqli_query($mysqli,$command_sql);
+						
 						?>
-								<script type="text/javascript">
-									alert("Participante registrado con éxito!");
-									window.location="index.php";
-								</script>
+								
 						<?php
 							elseif (!isset($actualizar)) :
 								if (isset($cedula)) :
@@ -52,14 +84,16 @@
 						?>
 
 						<input type="hidden" name="actualizar" value="<?php echo "$actualizar"; ?>" />
+						<input type="hidden" name="registro" value="<?php echo "$registro" ?>" />
+						<input type="hidden" name="cod_par" value="<?php if (isset($resultado)) echo "$resultado[0]" ?>">
 						<!-- Cedula del participante -->
-						<label for="ced_part">Cédula: </label>
+						<label for="ced_part">Nacionalidad: </label>
 						<select class="form-control" name="nacionalidad"  class="nac">
 							<option value=""> -- seleccione -- </option>
 							<option name="nacionalidad" value="V" <?php if (isset($resultado)) if ($resultado[9] == "V") echo "selected"; ?>> V </option>
 							<option name="nacionalidad" value="E" <?php if (isset($resultado)) if ($resultado[9] == "E") echo "selected"; ?>> E </option>
 						</select>
-						<label class="guion"> - </label>
+						<label class="guion">Cédula: </label>
 						<input class="form-control" id="text_form" class="cedula" type="text" name="ced_part" maxlength="8" size="6" placeholder="00000000" requi patter="^\d{8}" title="Ejemplo: V-00000000" <?php if (isset($resultado)) { echo "value='$resultado[1]'"; } elseif (isset($cedula)) { echo "value='$cedula'"; }?> /><br>
 						
 						<!-- Nombre del participante -->
@@ -121,13 +155,12 @@
 
 						<!-- Dependencia -->
 						<label>Dependencia</label>
-						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[10]'"; ?> /><br>
-		
+						<input class="form-control" id="text_form" type="text" maxlength="50" name="dependencia" placeholder="Ingrese la Instutucion de donde proviene" required patter="^[a-zA-Z]{3,15}" title="Ingrese la dependencia" <?php if (isset($resultado)) echo "value='$resultado[9]'"; ?>><br>
 						<!-- Botones -->
 						<div class="text-center">
-							<button type="submit" formaction="busqueda_planes.php" class="btn btn-danger" name="plan" value="<?php echo $plan; ?>" title="Haga click para regresar a la página anterior" >Regresar atrás</button>
-							<button type="reset" class="btn btn-danger" name="limpiar" value="Registrar" title="Haga click para registrar un plan" >Limpiar formulario</button>
-							<button type="submit" class="btn btn-danger" value="<?php echo $actualizar; ?>" title="Haga clic para registrar un plan" >Confirmar pre-inscripcion</button>
+							<button type="submit" formaction="busqueda_planes.php" class="btn btn-warning" name="plan" value="<?php echo $plan; ?>" title="Haga click para regresar a la página anterior" >Regresar atrás</button>
+							<button type="reset" class="btn btn-warning" name="limpiar" value="Registrar" title="Haga click para registrar un plan" >Limpiar formulario</button>
+							<button type="submit" class="btn btn-warning" value="<?php echo $actualizar; ?>" title="Haga clic para registrar un plan" >Confirmar pre-inscripcion</button>
 						</div><br>
 					</section>
 				</form>	

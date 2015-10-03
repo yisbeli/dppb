@@ -4,3 +4,11 @@
 	color: red;
 	cursor: pointer;
 }
+.color-sistema{
+	background-color: #FFEBD6;
+}
+.pie-padding{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+}
