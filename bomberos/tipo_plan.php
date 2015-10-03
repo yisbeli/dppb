@@ -22,9 +22,8 @@
 				     ?>
 					 <script type="text/javascript">
 					 	alert(" Tipo de Plan registrado con Exito!");
-					 	window.location="index.php"
+					 	window.location="tipo_plan.php"
 					 </script>
-
 					<?php else : ?>
 
 						<h3>Tipo de Planes</h3>
