@@ -33,7 +33,7 @@
 						<div class="buttons text-center">
 							<button class="btn btn-danger" type="reset" title="Haga clic para limpiar formulario" >Limpiar Formulario</button>
 							<button type="submit" name="registro" value="registro" title="Haga clic para Registrar" class="btn btn-danger">Registrar</button>
-						</div><br>	
+						</div><br>
 				</form>
 			</div>
 		</div>
