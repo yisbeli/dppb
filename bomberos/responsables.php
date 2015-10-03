@@ -17,7 +17,7 @@
 	?>
 	<script type="text/javascript">
 		alert("Has culminado el registro con éxito! ");
-		window.location="../sala.php";
+		window.location="sala.php";
 	</script>
 	<?php
 	else :
