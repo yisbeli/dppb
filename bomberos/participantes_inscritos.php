@@ -27,10 +27,12 @@
 							<td class='text-center'>$consulta[0]</td>
 							<td class='text-center'>$consulta[1]</td>
 							<td class='text-center'>$consulta[2]</td>
-							
 						</tr>";
 					endwhile; ?>
 				</table>
+				<div align="center">
+				<button class="btn btn-warning" type="button" onclick=location="sala.php">Regresar a la página anterior</button>
+			</div><br>
 		</div>
 </div>
 <?php include_once 'librerias/pie.php'; ?>

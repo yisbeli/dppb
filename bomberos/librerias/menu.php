@@ -52,7 +52,7 @@
 					        <li><a href="unidades_tributarias.php">Unidades tributarias</a></li>
 					      	<li role="separator" class="divider"></li>
 					        <li><a href="#"></a></li>
-					        <li><a href="#">Aceptación de usuario</a></li>
+					        <li><a href="aceptacion_usu.php">Aceptación de usuario</a></li>
 							<?php endif; ?>
 					    <li><a href="#">Cambio de clave</a></li>
 					    <li role="separator" class="divider"></li>

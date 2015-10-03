@@ -33,7 +33,7 @@
 						require 'includes/sql.php';
 					?>
 					<!-- Tipo del Plan de formacion -->
-					<label>Tipo de Plan de Formacion: </label><br>
+					<label>Tipo de plan de formacion: </label><br>
 					<select name="tipo_plan" class="form-control">
 						<option name="tipo_plan" value=""> -- Seleccione -- </option>
 					<?php
@@ -45,19 +45,19 @@
 					</select><br>
 					
 					<!-- Nombre del Plan de Formacion -->
-					<label for="nomb_plan">Nombre del Plan de Formacion: </label>
+					<label for="nomb_plan">Nombre del plan de formacion: </label>
 					<input class="form-control" type="text" name="nomb_plan" maxlength="50" size="44" placeholder="Ingrese un Nombre de Plan de Formacion" requi patter ="^[A-Z][a-Z]{3,15}(\s*[A-Z][a-Z]{3,15})*" title="Ingrese un nombre" /><br>
 					
 					<!-- Descripcion del plan  -->
-					<label for="desc_plan">Descripcion del Plan de Formacion: </label>
+					<label for="desc_plan">Descripcion del plan de formacion: </label>
 					<textarea class="form-control" name="desc_plan" id="" rows="5" cols="40" placeholder="Ingrese la descripcion del plan de formacion "></textarea><br>
 							
-					<label> Cantidad de Unidad(es) tributaria(s): </label>
+					<label> Cantidad de unidad(es) tributaria(s): </label>
 					<input class="form-control" type="text" name="cant_unid" maxlength="50" size="44" placeholder="Ingrese la cantidad de UT a cancelar">
 					
 					<!-- Botones --><br>
 					<div class="buttons" align="center">
-						<buton class="btn btn-warning" type="reset" title="Haga clic para limpiar formulario" >Limpiar formulario</buton>
+						<button class="btn btn-danger" type="reset" title="Haga clic para limpiar formulario" >Limpiar Formulario</button>
 						<button type="submit" name="registro" value="registro" title="Haga clic para Registrar un Plan" class="btn btn-warning">Registrar plan</button>
 					</div>
 				</form>

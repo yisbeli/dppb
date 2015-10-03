@@ -53,7 +53,7 @@
 					?>
 					</select>
 
-					<label>Tipo plan</label>
+					<label>Cargo</label>
 					<select name="tipo" class="form-control"> 
 						
 					<?php

@@ -4,7 +4,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<h2 class="text-center">Reporte total ingresos</h2>
-					<h3>Tipo de Plan de Formacion: </h3>
+					<h3>Tipo de plan de formacion: </h3>
 						<?php 
 
 							$sql=("SELECT * FROM tipo_plan");
@@ -54,7 +54,7 @@
 						?>
 						<table border="4" class="table table-bordered" class="text-center">
 							<tr class="bg-warning" class="text-center">
-								<td colspan="2"> Total Ingreso de dinero </td>
+								<td colspan="2"> Total ingreso de dinero </td>
 							</tr>
 							<tr>
 								<td><b>Total</b></td>
