@@ -16,7 +16,7 @@
 						//EXTRAEMOS Y CONECTAMOS
 						require_once 'includes/conexion_bd.php';
 
-						$command_sql="INSERT INTO tipo_plan(nomb_plan) VALUES ('$nomb_plan')";
+						$command_sql="INSERT INTO tipo_plan(nomb_plan, evaluacion) VALUES ('$nomb_plan', '$Evaluacion')";
 						require 'includes/sql.php';
 
 				     ?>
@@ -30,6 +30,13 @@
 						<label for="nomb_plan">Nombres: </label>
 						<input class="form-control" type="text" maxlength="90" name="nomb_plan" placeholder="Ingrese Nombre del Plan" required patter="^[a-zA-Z]{3,15}" title="Ingrese nombre del tipo de plan" />
 						<br>
+						<label>Evaluacion</label>
+						<select name="Evaluacion" class="form-control">
+							<option value="si">Si</option>
+							<option value="no">No</option>
+						</select>
+
+
 						<div class="buttons text-center">
 							<button class="btn btn-danger" type="reset" title="Haga clic para limpiar formulario" >Limpiar Formulario</button>
 							<button type="submit" name="registro" value="registro" title="Haga clic para Registrar" class="btn btn-danger">Registrar</button>
