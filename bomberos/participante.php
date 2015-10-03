@@ -59,7 +59,7 @@
 								$precio = ($resultado2[0] * $resultado3[0]);
 
 								//pre-inscribimos
-								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$resultado4[0]', '$precio')";
+								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
 								mysqli_query($mysqli,$command_sql);
 							?>
 								<script type="text/javascript">
