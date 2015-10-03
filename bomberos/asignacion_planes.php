@@ -6,7 +6,6 @@
 	extract($_POST);
 
 	if (isset($crear)) :
-
 		$sql = "INSERT INTO planes_responsables (cod_plan, cod_resp, lugar, fecha) VALUES ('$codigoplan', '$responsable', '$lugar', '$fecha')";
 		mysqli_query($mysqli, $sql);
 ?>
@@ -16,9 +15,8 @@
 </script>
 
 <?php
-	
 	elseif (isset($consulta2)) : 
-		$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid, pr.id FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
+		$sql = "SELECT * FROM planes WHERE tipo_plan='$plan'";
 		$result = mysqli_query($mysqli, $sql);
 		$sql = "SELECT * FROM responsables";
 		$resultado = mysqli_query($mysqli, $sql);
