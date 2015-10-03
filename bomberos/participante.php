@@ -61,6 +61,11 @@
 								//pre-inscribimos
 								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$resultado4[0]', '$precio')";
 								mysqli_query($mysqli,$command_sql);
+							?>
+								<script type="text/javascript">
+									alert("Participante registrado con éxito!");
+									window.location="index.php";
+								</script>
 						<?php
 							elseif (!isset($actualizar)) :
 								if (isset($cedula)) :
