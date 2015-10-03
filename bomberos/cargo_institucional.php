@@ -9,7 +9,7 @@
 	?>
 	<script type="text/javascript">
 		alert("Cargo institucional registrado con éxito");
-		window.location="nivel_academico.php";
+		window.location="cargo_institucional.php";
 	</script>
 	<?php
 	else :
