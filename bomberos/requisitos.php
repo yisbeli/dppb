@@ -23,22 +23,24 @@
                         }
 
                         $sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
-                         $consultado=mysqli_query($mysqli,$sentencia);
-                         $resultado2=mysqli_fetch_array($consultado);
+                        $consultado=mysqli_query($mysqli,$sentencia);
+                        $resultado2=mysqli_fetch_array($consultado);
 
-                         $consulta="SELECT cant_unid FROM planes WHERE cod_plan='$codigoplan'";
-                          $consul=mysqli_query($mysqli,$consulta);
-                          $resul=mysqli_fetch_array($consul);
+                        $consulta="SELECT cant_unid FROM planes WHERE cod_plan='$codigoplan'";
+                        $consul=mysqli_query($mysqli,$consulta);
+                        $resul=mysqli_fetch_array($consul);
 
-                          $precio=$resultado2[0]*$resul[0];
-
-                     echo "$codigoplan, $precio, $resultado2[0],$resul[0]"; 
+                        $precio=$resultado2[0]*$resul[0];
 
                         //actualizamos 
                         $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche', precio='$precio',status='inscrito' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
                         mysqli_query($mysqli,$command_sql);
 
                 ?>
+                <script type="text/javascript">
+                    alert("Participante registrado con éxito");
+                    window.location="sala.php";
+                </script>
                 <?php 
                         elseif (isset($eliminar)) :
                             
