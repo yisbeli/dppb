@@ -25,11 +25,11 @@
 								$consultado=mysqli_query($mysqli,$sentencia);
 								$resultado2=mysqli_fetch_array($consultado);
 
-								$command_sql = "SELECT * FROM planes WHERE cod_plan='$registro'";
+								$command_sql = "SELECT p.cant_unid FROM planes p, planes_responsables pr WHERE pr.id='$registro' AND p.cod_plan=pr.cod_plan";
 								$consultado=mysqli_query($mysqli,$command_sql);
 								$resultado3=mysqli_fetch_array($consultado);
 
-								$precio = ($resultado2[0] * $resultado3[4]);
+								$precio = ($resultado2[0] * $resultado3[0]);
 
 								//pre-inscribimos
 								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$resultado4[0]', '$precio')";
