@@ -63,7 +63,7 @@
                 <div class="text-center">
                   <button type="submit" name="registro_nota" value="registro" title="Haga clic para guardar la notas" class="btn btn-warning">Guardar notas</button>
                 </div><br><br>
-			</form>
+			</form>				
 		</div>
 	</div>
 </div>

@@ -4,9 +4,9 @@
 	<div class="rows">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
-			<h2>Reporte de Ingreso de dinero</h2>
+			<h2>Reporte de ingreso de dinero</h2>
 			<form method="POST" action="consulta_plan_ingresos.php">
-				<legend>Tipo de Plan de Formacion</legend>
+				<legend>Tipo de plan de formacion</legend>
 				<?php 
 					include_once 'includes/conexion_bd.php';
 					$sql=("SELECT * FROM tipo_plan");

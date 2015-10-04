@@ -3,7 +3,7 @@
 		<div class="rows">
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
-				<h2>Crea su cuenta del Laboratorio de Simulacion</h2><br>
+				<h2>Crea su cuenta del laboratorio de simulacion</h2><br>
 					<form  method="POST" action="nuevo_usu.php">
 						<?php
 							extract($_POST);
@@ -30,7 +30,7 @@
 							<?php 
 								endif;
 
-								$command_sql="INSERT INTO user (correo,clave,nombre) VALUES ('$correo','$clave1','$nombre')";
+								$command_sql="INSERT INTO user (correo,clave,nombre,apellido) VALUES ('$correo','$clave1','$nombre','$apellido')";
 								require 'includes/sql.php';
 							?>
 							<script type="text/javascript">
@@ -45,7 +45,10 @@
 							<h3> Datos Personales </h3>
 								<label>Nombre: </label>
 								<input class="form-control" type="text" name="nombre" maxlength="50" size="44" placeholder="Ingrese nombre de usuario" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Debe introducir solo letras" />
-									
+								
+								<label>Apellido: </label>
+								<input class="form-control" type="text" name="apellido" maxlength="50" size="44" placeholder="Ingrese apellido de usuario" required pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" title="Debe introducir solo letras" />
+
 								<label>Correo electronico: </label>
 								<input class="form-control" type="email" name="correo" placeholder="email@example.com" required size="30" />
 					
