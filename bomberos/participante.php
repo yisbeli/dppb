@@ -28,7 +28,8 @@
 								$command_sql = "SELECT p.cant_unid FROM planes p, planes_responsables pr WHERE pr.id='$registro' AND p.cod_plan=pr.cod_plan";
 								$consultado=mysqli_query($mysqli,$command_sql);
 								$resultado3=mysqli_fetch_array($consultado);
-
+								
+								//calculamos el precio y se almacena en precio de la tabla planes_participantes
 								$precio = ($resultado2[0] * $resultado3[0]);
 
 								//pre-inscribimos
@@ -61,6 +62,7 @@
 								//pre-inscribimos
 								$command_sql = "INSERT INTO planes_participantes (cod_plan, cod_par, precio) VALUES ('$registro', '$cod_par', '$precio')";
 								mysqli_query($mysqli,$command_sql);
+								//aqui
 							?>
 								<script type="text/javascript">
 									alert("Participante registrado con éxito!");

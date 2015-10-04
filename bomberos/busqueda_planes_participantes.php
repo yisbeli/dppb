@@ -27,7 +27,7 @@
 							<td class='text-center' width='10%'>
 							<?php if ($consulta[4] == "por-iniciar"): ?>
 								<button type='submit' name='registro' value='<?php echo $consulta[3]; ?>' class='boton-sin-estilo'>Pre-inscritos</button>								
-							<?php elseif ($consulta[4] == "activo") : ?>
+							<?php elseif ($consulta[4] == "activo" or $consulta[4] == "culminado") : ?>
 								<button formaction="participantes_inscritos.php" type='submit' name='registro' value='<?php echo $consulta[3]; ?>' class='boton-sin-estilo'>Inscritos</button>
 							<?php endif; ?>
 							</td>

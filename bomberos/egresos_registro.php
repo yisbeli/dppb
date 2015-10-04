@@ -4,7 +4,7 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<h2>Registre los Egresos</h2><br>
-					<form  method="POST" action="egresos.php">
+					<form  method="POST" action="egresos_registro.php">
 						<?php
 							extract($_POST);
 							if (isset($registro)) :
@@ -12,6 +12,18 @@
 							require_once 'includes/conexion_bd.php';?>
 							
 							<?php 
+
+								$con="SELECT * FROM fondos WHERE id=1";
+								$result = mysqli_query($mysqli, $con);
+                      		  	$resultado=mysqli_fetch_array($result);
+
+                      		  	$var=$resultado[2]+$monto_egr;
+                      		  	$var2=$resultado[3]-$monto_egr;
+
+                      		  	$con="UPDATE fondos SET total_egreso='$var', saldo='$var2' WHERE id=1";
+                      		  	mysqli_query($mysqli,$con);
+
+
 
 								$command_sql="INSERT INTO egresos(fech_egr,clase_egr,monto_egr,num_factura) VALUES ('$fech_egr','$clase_egr','$monto_egr','$num_factura')";
 								require 'includes/sql.php';

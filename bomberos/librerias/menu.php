@@ -30,7 +30,7 @@
 				           <li><a href="ingresos.php">Ingresos por tipo de plan</a></li>
 				            <li><a href="ingresos_plan.php">Ingreso Total</a></li>
 				            <li><a href="egresos_registro.php">Registro de los egresos</a></li>
-				            <li><a href="ingresos.php">Estadísticas</a></li>
+				            <li><a href="egresos.php">Egreso Total</a></li>
 				          </ul>
 				        </li>
 				        <li class="dropdown">

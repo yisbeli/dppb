@@ -19,7 +19,7 @@
 			<div class="col-md-6">
 				<form action="cargo_institucional.php" method="POST">
 					<legend>Nuevo cargo institucional</legend>
-					<input type="text" name="ut" placeholder="Nivel académico" class="form-control">
+					<input type="text" name="ut" placeholder="Tipo de responsable" class="form-control">
 					<div class="text-center"><br>
 						<button class="btn btn-warning" type="reset">Limpiar formulario</button>
 						<button class="btn btn-warning" type="submit" name="actualizarut">Registrar cargo institucional</button>					
