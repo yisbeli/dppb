@@ -4,7 +4,7 @@
 ?>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3 text-left"><br>
+			<div class="col-md-3 col-sm-3 text-left"><br>
 				<legend>Inicio de sesión</legend>
 				<?php
 					include 'includes/conexion_bd.php';
@@ -32,7 +32,7 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 col-sm-9">
 				<article id="vision"><br />
 					<h2> Laboratorio de Simulación</h2>
 					<h3>Misión</h3>

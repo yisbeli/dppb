@@ -39,9 +39,15 @@
 
 
 						<div class="buttons text-center">
+<<<<<<< HEAD
 							<button class="btn btn-warning" type="reset" title="Haga clic para limpiar formulario" >Limpiar Formulario</button>
 							<button type="submit" name="registro" value="registro" title="Haga clic para Registrar" class="btn btn-warning">Registrar</button>
 						</div><br>	
+=======
+							<button class="btn btn-danger" type="reset" title="Haga clic para limpiar formulario" >Limpiar Formulario</button>
+							<button type="submit" name="registro" value="registro" title="Haga clic para Registrar" class="btn btn-danger">Registrar</button>
+						</div><br>
+>>>>>>> 103276e65934f8c002dc8ddbdb9381207f70fede
 				</form>
 			</div>
 		</div>

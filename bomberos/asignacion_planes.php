@@ -6,7 +6,7 @@
 	extract($_POST);
 
 	if (isset($crear)) :
-		$sql = "INSERT INTO planes_responsables (cod_plan, cod_resp, lugar, fecha) VALUES ('$codigoplan', '$responsable', '$lugar', '$fecha')";
+		$sql = "INSERT INTO planes_responsables (cod_plan, cod_resp, lugar, fecha,duracion) VALUES ('$codigoplan', '$responsable', '$lugar', '$fecha', '$duracion')";
 		mysqli_query($mysqli, $sql);
 ?>
 <script type="text/javascript">
@@ -58,9 +58,11 @@
 					</select>
 
 					<label>Lugar del curso</label>
-					<input type="text" name="lugar" value="" class="form-control">
-					<label>Fecha</label>
+					<input type="text" name="lugar" value="" class="form-control"><br>
+					<label>Fecha de inicio</label>
 					<input name="fecha" type="date" class="form-control"><br>
+					<label>Fecha de culminacion</label>
+					<input type="date" name="duracion" class="form-control"><br>
 					<div class="text-center">
 						<button type="submit" name="crear" class="btn btn-warning">Crear</button>
 					</div>
@@ -85,8 +87,15 @@
 						<?php while ($consulta = mysqli_fetch_array($result)) : ?>
 							<option value="<?php echo $consulta[0]; ?>"> <?php echo $consulta[1]; ?></option>
 						<?php endwhile; ?>
+<<<<<<< HEAD
 					</select>
 					<button type="submit" name="consulta2" class="btn btn-warning">Consultar</button>
+=======
+					</select><br>
+					<div class="text-center">
+						<button type="submit" name="consulta2" class="btn btn-warning">Consultar</button>
+					</div>
+>>>>>>> 103276e65934f8c002dc8ddbdb9381207f70fede
 				</form>
 			</div>
 		</div>

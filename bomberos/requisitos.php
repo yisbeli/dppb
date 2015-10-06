@@ -22,24 +22,32 @@
                             $num_bauche = "";
                         }
 
-                        $sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
-                        $consultado=mysqli_query($mysqli,$sentencia);
-                        $resultado2=mysqli_fetch_array($consultado);
-
-                        $consulta="SELECT cant_unid FROM planes WHERE cod_plan='$codigoplan'";
-                        $consul=mysqli_query($mysqli,$consulta);
-                        $resul=mysqli_fetch_array($consul);
-
-                        $precio=$resultado2[0]*$resul[0];
 
                         //actualizamos 
-                        $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche', precio='$precio',status='inscrito' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
+                        $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche', status='inscrito' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
                         mysqli_query($mysqli,$command_sql);
 
+                        if ($tipo=="No"):
+
+                            $command_sql="SELECT pp.precio FROM planes_participantes pp, planes_responsables pr WHERE pr.id='$codigoplan' AND pp.cod_par='$cedula'";
+                            $h=mysqli_query($mysqli,$command_sql);
+                            $precio=mysqli_fetch_array($h);
+
+                            //Actualizacion de total_ingresos en la tabla fondos
+                            $command_sql="SELECT * FROM fondos WHERE id=1"; 
+                            $cons=mysqli_query($mysqli,$command_sql);
+                            $res=mysqli_fetch_array($cons);
+                            //calculamos
+                            $suma=$precio[0]+$res[3];
+                            $suma2=$precio[0]+$res[1];
+                            echo "$suma,$suma2,$precio[0]";
+                            $command_sql="UPDATE fondos SET total_ingreso='$suma2', saldo='$suma' WHERE id=1";
+                            mysqli_query($mysqli,$command_sql);
+                        endif;
                 ?>
                 <script type="text/javascript">
                     alert("Participante registrado con éxito");
-                    window.location="sala.php";
+                    window.location="participantes_pre_inscritos.php";
                 </script>
                 <?php 
                         elseif (isset($eliminar)) :
@@ -100,9 +108,9 @@
                          <input class="form-control" id="text_form" type="text" maxlength="30" name="otros" placeholder="Ingrese otro documento si desea" patter="^[a-zA-Z]{3,15}" title="Ingrese otro tipo de documento si desea"/><br>
                 
                     <div class="text-center">
+                            <button type="submit" name="eliminar" value="eliminar" title="Haga clic para cancelar la inscripcion" class="btn btn-warning">Cancelar inscripcion</button>
                             <button type="reset" class="btn btn-warning" name="limpiar" value="Registrar" title="Limpiar datos seleccionados" >Limpiar datos</button>
                             <button type="submit" name="registro" value="registro" title="Haga clic para guardar los datos del expediente" class="btn btn-warning">Guardar datos</button>
-                            <button type="submit" name="eliminar" value="eliminar" title="Haga clic para cancelar la inscripcion" class="btn btn-warning">Cancelar inscripcion</button>
                     </div><br><br>
                 </form>
             </div>
