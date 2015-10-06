@@ -5,7 +5,6 @@
 		<div class="col-md-8">
 			<form action="participantes_inscritos.php" method="POST">
 			<legend style="color:#000">Resultado de la búsqueda de participantes inscritos</legend>
-			
 			<?php
 				require_once 'includes/conexion_bd.php';
 				extract($_POST);
@@ -22,23 +21,28 @@
 
 				<?php  
 					else:
-
 				//EXTRAEMOS Y CONECTAMOS
-				$sql="SELECT participantes.ced_part, participantes.nomb_part, participantes.apell_part,planes_participantes.id  FROM participantes, planes_participantes WHERE planes_participantes.cod_par=participantes.cod_par AND planes_participantes.status = 'inscrito' AND planes_participantes.cod_plan='$registro'";
+				$sql="SELECT participantes.ced_part, participantes.nomb_part, participantes.apell_part, planes_participantes.id, planes_participantes.nota, planes_participantes.cod_par FROM participantes, planes_participantes WHERE planes_participantes.cod_par=participantes.cod_par AND planes_participantes.status = 'inscrito' AND planes_participantes.cod_plan='$registro'";
 				$result=mysqli_query($mysqli,$sql);
 			?>
 			<input type="hidden" name="codigoplan" value=" <?php echo $registro ?>"/>
 			<?php 
-						$coman_sql="SELECT status FROM planes_responsables WHERE  id='$registro'";
-							$h=mysqli_query($mysqli,$coman_sql);
-							$res=mysqli_fetch_array($h);
-							if ($res[0]=="culminado"):
-						$celda1="<th class='text-center'>Accion</th>";
-						$celda2= "<td class='text-center'><input type='text' name='nota[]' size='5'/></td>";
-						else: 
-							$celda1="";
-							$celda2="";
-						endif;?>
+				$coman_sql="SELECT pr.status, pp.nota, pp.id FROM planes_responsables pr, planes_participantes pp WHERE  pr.id='$registro' AND pp.cod_plan=pr.id";
+				$h=mysqli_query($mysqli,$coman_sql);
+				$res=mysqli_fetch_array($h);
+				if ($res[0]=="culminado"):
+					$celda1="<th class='text-center'>Accion</th>";
+					if (empty($res[1])) :
+						$botones = '<button type="submit" name="registro_nota" value="registro" title="Haga clic para guardar la notas" class="btn btn-warning">Guardar notas</button>';
+					else :
+						$botones = '<button type="button" onclick=location="sala.php" class="btn btn-warning">Regresar a la página princial</button>';
+					endif;
+				else: 
+					$celda1="";
+					$celda2="";
+					$botones = '<button type="button" onclick=location="sala.php" class="btn btn-warning">Regresar a la página princial</button>';
+				endif;?>
+				<input type="hidden" name="plandeformacion" value="<?php echo $registro; ?>">
 				<table class="table table-bordered">
 					<tr class="bg-warning">
 						<th class="text-center">Cedula</th>
@@ -55,17 +59,20 @@
 							<td class='text-center'>$consulta[1]</td>
 							<td class='text-center'>$consulta[2] <input type='hidden' name='id_participante[]' value='$consulta[3]' /></td>";
 						
-						echo $celda2."</tr>";
-						echo "";
-
+					if (empty($consulta[4])) :
+						$celda2 = "<td><input type='text' name='nota[]' size='5'/></td>";
+					else :
+						$celda2 = "<td>
+					<button type='submit' formtarget='_blank' formaction='generador.php' name='pedir_certificado' value='$consulta[5]' class='boton-sin-estilo'>Imprimir certificado</button></td>";					endif;
+						echo $celda2;
+						//echo $celda2."</tr>";
 					endwhile; ?>
 				</table>
                 <div class="text-center">
-                  <button type="submit" name="registro_nota" value="registro" title="Haga clic para guardar la notas" class="btn btn-warning">Guardar notas</button>
+                  <?php echo $botones; ?>
                 </div><br><br>
-			</form>				
+			</form>
 		</div>
 	</div>
 </div>
-
 <?php include_once 'librerias/pie.php'; endif; ?>
