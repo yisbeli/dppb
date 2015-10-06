@@ -82,8 +82,8 @@
 				</table>
 
 				<div class="buttons text-center">
-					<button class="btn btn-danger" type="reset" title="Haga clic para limpiar formulario" >Limpiar Formulario</button>
-					<button type="submit" name="actualizar" value="actualizar" title="Haga clic para Actualizar" class="btn btn-danger">Actualizar</button>
+					<button class="btn btn-warning" type="reset" title="Haga clic para limpiar formulario" >Limpiar Formulario</button>
+					<button type="submit" name="actualizar" value="actualizar" title="Haga clic para Actualizar" class="btn btn-warning">Actualizar</button>
 				</div><br>	
 				</form>
 			</div>

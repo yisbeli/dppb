@@ -68,18 +68,18 @@
                 ?>
                         <legend>Documentos consignados</legend>
                         <label for="CI">1 FOTOCOPIA DE LA CEDULA DE IDENTIDAD: </label>
-                        <input type="checkbox" value="s" name="copia_ced" required /> <br>
+                        <input type="checkbox" value="s" name="copia_ced" /> <br>
                         <label for="foto">2 FOTOS TIPO CARNET: </label>
-                        <input type="checkbox" value="s" name="foto" required/> <br>
+                        <input type="checkbox" value="s" name="foto" /> <br>
 
                         <label for="carpeta">1 CARPETA MARRON TAMAÑO OFICIO CON GANCHO:</label>
-                        <input type="checkbox" value="s" name="carpeta" required /> <br>
+                        <input type="checkbox" value="s" name="carpeta" /> <br>
 
                         <label for="ctitulo">1 FOTOCOPIA DE TITULO DE BACHILLER:</label>
-                        <input type="checkbox" value="s" name="copia_titulo" required /><br>
+                        <input type="checkbox" value="s" name="copia_titulo"  /><br>
                         
                         <label for="sintesis">1 SINTESIS CURRICULAR:</label>
-                        <input type="checkbox" value="s" name="sintesis" required /><br>
+                        <input type="checkbox" value="s" name="sintesis" /><br>
 
                     <?php endif; ?>
 

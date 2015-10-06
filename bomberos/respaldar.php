@@ -35,7 +35,7 @@
 									<option name="resp_bd" value="Documentos">Documentos</option>
 								</select> <br /><br />	
 						<div class="buttons" aling="center">
-							<button type="submit" name="respaldar" value="respaldar" title="Haga clic para Respaldar" class="btn btn-danger">Respaldar</button>
+							<button type="submit" name="respaldar" value="respaldar" title="Haga clic para Respaldar" class="btn btn-warning">Respaldar</button>
 
 						</div><br>	
 				</form>

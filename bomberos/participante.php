@@ -129,7 +129,7 @@
 						
 						<!-- TELÉFONO - MOVIL -->
 						<label for="tlfn_part">Teléfono: </label>
-						<input class="form-control" id="text_form" type="text" name="tlfn_part" maxlength="12" size="10" placeholder="0000-0000000" required patter="^\d{4}\-\d{7}$" title="0000-0000000" <?php if (isset($resultado)) echo "value='$resultado[5]'"; ?> /><br>
+						<input class="form-control" id="text_form" type="text" name="tlfn_part" maxlength="12" size="10" placeholder="0000-0000000"  patter="^\d{4}\-\d{7}$" title="0000-0000000" <?php if (isset($resultado)) echo "value='$resultado[5]'"; ?> /><br>
 						
 						<!-- EMAIL -->
 						<label for="email_part">Correo: </label>

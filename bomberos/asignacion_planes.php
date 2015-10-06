@@ -62,7 +62,7 @@
 					<label>Fecha</label>
 					<input name="fecha" type="date" class="form-control"><br>
 					<div class="text-center">
-						<button type="submit" name="crear" class="btn btn-danger">Crear</button>
+						<button type="submit" name="crear" class="btn btn-warning">Crear</button>
 					</div>
 				</form>
 			</div>
@@ -86,7 +86,7 @@
 							<option value="<?php echo $consulta[0]; ?>"> <?php echo $consulta[1]; ?></option>
 						<?php endwhile; ?>
 					</select>
-					<button type="submit" name="consulta2" class="btn btn-danger">Consultar</button>
+					<button type="submit" name="consulta2" class="btn btn-warning">Consultar</button>
 				</form>
 			</div>
 		</div>
