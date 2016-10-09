@@ -49,8 +49,30 @@
         window.location="recuperar_contrasena.php";
       </script>
 <?php
-    endif;
-    endif;
+    	else :
+				$cambiar_contrasena = true;
+			endif; //fin de comparacion de respuesta
+		endif; //fin si existe respuesta
+		if (isset($cambio_contrasena)) :
+			if ($repita_contrasena == $cambio_contrasena) :
+				$cambio_contrasena=md5($cambio_contrasena);
+				$sql="UPDATE user SET clave='$cambio_contrasena' WHERE correo='$correo'";
+				$consulta=(mysqli_query($mysqli,$sql));
+		?>
+		      <script type="text/javascript">
+		        alert("Se ha recuperado la contraseña satisfactoriamente!");
+		        window.location="home.php";
+		      </script>
+		<?php
+			else :
+				?>
+							<script type="text/javascript">
+								alert("Las contraseñas ingresadas no coinciden!");
+								window.location="recuperar_contrasena.php";
+							</script>
+				<?php
+			endif; // fin de comparacion de contraseñas
+		endif;
   endif;
 ?>
 
@@ -59,12 +81,18 @@
     <div class="col-md-5 col-md-offset-3">
       <form  method="POST" action="recuperar_contrasena.php">
      <input class="form-control" type="text" name="correo" value="<?php if (isset($correo)) echo $correo; ?>" required size="30" placeholder="Ingrese su correo"/>
-     <?php if (isset($correo)) : ?>
-        <label><?php echo $mensaje; ?></label>
-       <input class="form-control" type="password" name="respuesta" required size="30" placeholder="Ingrese su respuesta"/>
-      <?php endif;
-        
-      ?>
+     <?php
+			if($cambiar_contrasena  == true) :
+		?>
+		<input class="form-control" type="password" name="cambio_contrasena" required size="30" placeholder="Ingrese su nueva contraseña"/>
+		<input class="form-control" type="password" name="repita_contrasena" required size="30" placeholder="Repita su nueva contraseña"/>
+		<?php
+			elseif (isset($correo)) :?>
+				<label><?php echo $mensaje; ?></label>
+				<input class="form-control" type="password" name="respuesta" required size="30" placeholder="Ingrese su respuesta"/>
+       <?php
+			endif;
+		?>
      <div class="text-center">
        <button class="btn btn-sistema" type="reset" title="volver" onclick=location="home.php"> <span class="glyphicon glyphicon-hand-left"></span> Volver al inicio</button>
        <button class="btn btn-sistema" type="reset" title="Haga clic para limpiar formulario"> <span class="glyphicon glyphicon-repeat"> </span> Limpiar Formulario</button>
