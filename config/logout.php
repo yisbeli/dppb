@@ -7,5 +7,5 @@ $_SESSION = array();
 session_destroy();
 ?>
 	 <script>
-    window.location="../sala.php";
+    window.location="../home.php";
     </script>
