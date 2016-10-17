@@ -4,7 +4,7 @@
 		<div class="rows">
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
-				<h2>Registre los Egresos</h2><br>
+				<h2>Registre los egresos</h2><br>
 					<form  method="POST" action="egresos_registro.php">
 						<?php
 							extract($_POST);

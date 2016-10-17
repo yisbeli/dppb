@@ -3,7 +3,7 @@
 		<div class="rows">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<h2 class="text-center">Reporte Total de Egresos</h2>
+				<h2 class="text-center">Reporte total de egresos</h2>
 					<h3>Tipo de egresos: </h3>
 						<?php 
 
@@ -36,7 +36,7 @@
 										endwhile;	
 							?></table>
 							<div class="text-center">
-								<button class="btn btn-sistema" type="button" onclick=location="sala.php"><span class="glyphicon glyphicon-hand-left"></span> Vover al Inicio</button>		
+								<button class="btn btn-sistema" type="button" onclick=location="egresos_mes.php"><span class="glyphicon glyphicon-hand-left"></span> Vover al Inicio</button>		
 							</div><br>
 			</div>
 		</div>

@@ -5,9 +5,9 @@
 	<div class="rows">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
-			<h2>Reporte Mensual de las personas capacitadas</h2>
+			<h2>Reporte mensual de las personas capacitadas</h2>
 			<form method="POST" action="consulta_personas_mes.php">
-				<legend>Seleccione un mes y Ano</legend>
+				<legend>Seleccione un mes y ano</legend>
 				<select class="form-control" name="mes"  class="nac">
 						<option value=""> -- seleccione -- </option>
 						<option name="mes" value="Enero"> Enero </option>

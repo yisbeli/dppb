@@ -3,7 +3,7 @@
 		<div class="rows">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<h2 class="text-center">Reporte de Planes Dictados</h2>
+				<h2 class="text-center">Reporte de planes dictados</h2>
 				<form method="POST" action="">
 					<?php 
 						extract($_POST);
@@ -22,8 +22,7 @@
 
 					<table border="2" class="table table-bordered">
 						<tr class="bg-warning">
-							<th>Nombre</th>
-							<th>Descripcion</th>
+							<th>Nombre del plan de formacion</th>
 						</tr>
 						
 

@@ -20,7 +20,7 @@
 			<div class="col-md-6">
 				<form action="cargo_institucional.php" method="POST">
 					<legend>Nuevo cargo institucional</legend>
-					<input type="text" name="ut" placeholder="Tipo de responsable" class="form-control">
+					<input type="text" name="ut" placeholder="Cargo institucional" class="form-control">
 					<div class="text-center"><br>
 						<button class="btn btn-sistema" type="reset" title="volver" onclick=location="sala.php"> <span class="glyphicon glyphicon-hand-left"></span> Volver al inicio</button>
 						<button class="btn btn-sistema" type="reset" title="Haga clic para limpiar formulario"> <span class="glyphicon glyphicon-repeat"> </span> Limpiar Formulario</button>

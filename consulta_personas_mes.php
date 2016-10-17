@@ -22,8 +22,7 @@
 
 					<table border="2" class="table table-bordered">
 						<tr class="bg-warning">
-							<th>Nombre</th>
-							<th>Descripcion</th>
+							<th>Nombre del plan de formacion</th>
 						</tr>
 						
 
@@ -37,7 +36,7 @@
 						</tr>
 					<?php endwhile; } ?>
 					<tr class="bg-warning">
-							<th> Total planes dictados</th>
+							<th> Total personas capacitadas</th>
 							<td><?php ; ?></td>
 					</tr>
 

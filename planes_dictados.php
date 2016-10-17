@@ -1,12 +1,12 @@
 <?php	include_once 'cabecera.php'; ?>
-	<?php 	include_once 'libs/menu.php'; ?>
+<?php 	include_once 'libs/menu.php'; ?>
 	<section class="container">
-
+	
 	<div class="rows">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
-			<h2>Reporte mensual de los ingresos</h2>
-			<form method="POST" action="consulta_ingresos_mes.php">
+			<h2>Reporte mensual de los planes dictados</h2>
+			<form method="POST" action="consulta_planes_dictados.php">
 				<legend>Seleccione un mes y ano</legend>
 				<select class="form-control" name="mes"  class="nac">
 						<option value=""> -- seleccione -- </option>
