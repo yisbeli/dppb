@@ -3,12 +3,22 @@
 		<div class="rows">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<h2 class="text-center">Reporte mensual de ingresos</h2>
+				<h2 class="text-center">Reporte mensual personas capacitadas</h2>
 				<form method="POST" action="">
 					<?php 
 						extract($_POST);
+
+						if (empty($mes) || 	 empty($ano)) {
+							?>
+							<script type="text/javascript">
+								alert("Debe seleccionar todos los campos requeridos");
+								window.location="planes_dictados.php";
+							</script>
+							<?php
+						}
+
 						include_once 'config/conexion_bd.php';
-						$sql="SELECT * FROM planes WHERE tipo_plan='$nomb_plan'";
+						$sql = "SELECT * FROM planes_responsables WHERE Fecha_inicio >= '".$ano."-".$mes."-01' AND Fecha_inicio <= '".$ano."-".$mes."-31' ORDER BY Fecha_inicio ASC";
 						$resultado= mysqli_query($mysqli,$sql);
 						$result=mysqli_fetch_array($resultado);
 						$sentencia="SELECT valor_unid FROM unidades_trib WHERE id_unid=(SELECT MAX(id_unid) FROM unidades_trib)";
@@ -20,31 +30,49 @@
 						}else{
 					?>
 
-					<table border="2" class="table table-bordered">
+						<table border="2" class="table table-bordered">
 						<tr class="bg-warning">
 							<th>Nombre del plan de formacion</th>
+							<th>Fecha inicio</th>
+							<th>Fecha final</th>
+							<th>Cantidad personas capacitadas</th>
 						</tr>
 						
 
 						<?php
-						$sql="SELECT * FROM planes WHERE tipo_plan='$nomb_plan'";
+						$sql = "SELECT * FROM planes_responsables WHERE Fecha_inicio >= '".$ano."-".$mes."-01' AND Fecha_inicio <= '".$ano."-".$mes."-31' ORDER BY Fecha_inicio ASC";
 						$resultado= mysqli_query($mysqli,$sql);
-						 while ($result=mysqli_fetch_array($resultado)) : ?>
-						<tr class="text-center">
-							<td><?php echo "$result[2]"; ?></td>
-							<td><?php echo "$result[3]"; ?></td>
-						</tr>
-					<?php endwhile; } ?>
+
+						$i = 0;
+
+						 while ($result=mysqli_fetch_array($resultado)) :
+
+						 	$sql = "SELECT nomb_plan FROM planes WHERE cod_plan = '".$result[1]."'";
+							$consulta_nombre_plan = mysqli_query($mysqli, $sql);
+							$nombrePlan = mysqli_fetch_array($consulta_nombre_plan);
+
+							$sql = "SELECT count(cod_par) FROM planes_participantes WHERE cod_plan = '".$result[1]."'";
+							$consulta = mysqli_query($mysqli, $sql);
+							$participantes = mysqli_fetch_array($consulta);
+							?>
+
+							<tr class="text-center">
+								<td><?php echo "$nombrePlan[0]"; ?></td>
+								<td><?php echo "$result[5]"; ?></td>
+								<td><?php echo "$result[6]"; ?></td>
+								<td><?php echo "$participantes[0]"; ?></td>
+							</tr>
+					<?php $i += $participantes[0] ; endwhile; ?>
 					<tr class="bg-warning">
-							<th> Total personas capacitadas</th>
-							<td><?php ; ?></td>
+							<th colspan="3"> Total personas capacitadas</th>
+							<th><?php echo $i; ?></th>
 					</tr>
 
 					</table>
-
+				<?php } ?>
 				</form>
 				<div class="text-center">
-					<button class="btn btn-sistema" type="button" onclick=location="personas_capacitadas_mes.php"><span class="glyphicon glyphicon-hand-left"></span> Regresar a la pagina principal</button>					
+					<button class="btn btn-sistema" type="button" onclick=location="personas_capacitadas_mes.php">Regresar a la pagina principal</button>					
 				</div><br>
 			</div>
 		</div>

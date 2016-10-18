@@ -82,7 +82,7 @@
       <form  method="POST" action="recuperar_contrasena.php">
      <input class="form-control" type="text" name="correo" value="<?php if (isset($correo)) echo $correo; ?>" required size="30" placeholder="Ingrese su correo"/>
      <?php
-			if($cambiar_contrasena  == true) :
+			if(isset($cambiar_contrasena)) :
 		?>
 		<input class="form-control" type="password" name="cambio_contrasena" required size="30" placeholder="Ingrese su nueva contraseña"/>
 		<input class="form-control" type="password" name="repita_contrasena" required size="30" placeholder="Repita su nueva contraseña"/>

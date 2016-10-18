@@ -9,19 +9,19 @@
 			<form method="POST" action="consulta_personas_mes.php">
 				<legend>Seleccione un mes y ano</legend>
 				<select class="form-control" name="mes"  class="nac">
-						<option value=""> -- seleccione -- </option>
-						<option name="mes" value="Enero"> Enero </option>
-						<option name="mes" value="Febrero"> Febrero </option>
-						<option name="mes" value="Marzo"> Marzo </option>
-						<option name="mes" value="Abril"> Abril </option>
-						<option name="mes" value="Mayo"> Mayo </option>
-						<option name="mes" value="Junio"> Junio </option>
-						<option name="mes" value="Julio"> Julio </option>
-						<option name="mes" value="Agosto"> Agosto </option>
-						<option name="mes" value="Septiembre"> Septiembre </option>
-						<option name="mes" value="Octubre"> Octubre </option>
-						<option name="mes" value="Noviembre"> Noviembre </option>
-						<option name="mes" value="Diciembre"> Diciembre </option>
+					<option value=""> -- seleccione -- </option>
+					<option value="01"> Enero </option>
+					<option value="02"> Febrero </option>
+					<option value="03"> Marzo </option>
+					<option value="04"> Abril </option>
+					<option value="05"> Mayo </option>
+					<option value="06"> Junio </option>
+					<option value="07"> Julio </option>
+					<option value="08"> Agosto </option>
+					<option value="09"> Septiembre </option>
+					<option value="10"> Octubre </option>
+					<option value="11"> Noviembre </option>
+					<option value="12"> Diciembre </option>
 				</select>
 				<select class="form-control" name="ano"  class="nac">
 						<option value=""> -- seleccione -- </option>
