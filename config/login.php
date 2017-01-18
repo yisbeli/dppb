@@ -2,7 +2,7 @@
 	session_start();
 	include('conexion_bd.php');
 	extract($_POST);
-	$password = md5($password);
+	//$password = md5($password);
 	$sql = "SELECT * FROM user WHERE correo='$usuario' AND clave ='$password'";
 	$result = mysqli_query($mysqli,$sql);
 	if(mysqli_num_rows($result)){
@@ -11,12 +11,14 @@
 		$_SESSION['correo']=$row['correo'];
 		$_SESSION['nombre']=$row['nombre'];
 		$_SESSION['tipo']=$row['tipo'];
+		$_SESSION['LAST_ACTIVITY'] = time();
+		$_SESSION['login']=1;
 		if($_SESSION['tipo']==1)
 			header('location: ../sala.php');
-		else
+		else 
 			header('location: ../sala.php');
-	}
-	else {
+	} 
+	else { 
 	?>
 		<meta charset="utf-8">
 		<script type="text/javascript">

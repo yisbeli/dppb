@@ -1,5 +1,7 @@
 <?php	
 	include_once 'cabecera.php';
+	include_once 'inactivo.php';
+	include_once 'sesion.php';
 ?>
 	<?php 	include_once 'libs/menu.php'; ?>
 	<section class="aceptacion container">
@@ -7,7 +9,7 @@
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<h2>Aceptacion de usuario</h2>
-				<form method="POST" action="aceptacion_usu.php" >
+				<form method="POST" action="aceptacion_usu.php" id="aceptacira">
 					<?php
 						require_once 'config/conexion_bd.php'; 
 						extract($_POST);
@@ -74,7 +76,7 @@
 					endwhile; ?>
 				</table>
 				<div class="buttons text-center">
-					<button type="submit" name="actualizar" value="actualizar" title="Haga clic para Actualizar" class="btn btn-sistema">  <span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+					<button type="submit" disabled name="actualizar" value="actualizar" title="Haga clic para Actualizar" class="btn btn-sistema">  <span class="glyphicon glyphicon-ok"></span> Aceptar</button>
 				</div><br>	
 				</form>
 			</div>

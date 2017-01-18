@@ -1,5 +1,7 @@
 <?php 
 require_once 'config/conexion_bd.php'; 
+	include_once 'inactivo.php';
+	include_once 'sesion.php';
 $cod_plan=$_REQUEST['cod_plan']; 
 $sql="DELETE FROM planes WHERE cod_plan='$cod_plan'";
 if (mysqli_query($mysqli,$sql)) 

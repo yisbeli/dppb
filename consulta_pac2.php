@@ -1,6 +1,8 @@
 <?php
   include_once 'cabecera.php';
   include_once 'libs/menu.php';
+  include_once 'inactivo.php';
+  include_once 'sesion.php';
 ?>
 <section class="container">
  

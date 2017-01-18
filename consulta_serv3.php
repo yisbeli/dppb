@@ -1,5 +1,7 @@
 <?php include("cabecera.php"); 
 include_once 'libs/menu.php';?>
+<?php 	include_once 'inactivo.php';
+	    include_once 'sesion.php'; ?>
 <section class="container">
 	
 		<div class="rows">
@@ -8,7 +10,7 @@ include_once 'libs/menu.php';?>
 				<legend>Cosulta de Servicios Operacionales</legend>
 				<form method="POST" action="consulta_ser3.php">
 
-<table class="table table-bordered" algin="center">
+<table class="table table-bordered" algin="left">
 	<tr class="bg-warning">
 		<th>Codigo de Servicio</th>
 		<th>Tipo de Servicio</th>

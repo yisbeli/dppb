@@ -111,3 +111,12 @@ footer{
 	border: 2px solid #da251c;
 	font-family: 'Open Sans', sans-serif;
 }
+.flex-direction-nav .flex-next{
+	right: -20px !important;
+}
+.flex-direction-nav .flex-prev {
+    left: -20px !important;
+}
+.flex-direction-nav a:before{
+	margin-top: 10px !important;
+}

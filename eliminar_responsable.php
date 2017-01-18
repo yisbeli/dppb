@@ -1,5 +1,7 @@
 <?php 
 require_once 'config/conexion_bd.php'; 
+	include_once 'inactivo.php';
+	include_once 'sesion.php';
 $ced_resp=$_REQUEST['eu']; 
 $sql="DELETE FROM responsables WHERE ced_resp='$ced_resp'";
 if (mysqli_query($mysqli,$sql)) 

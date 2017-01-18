@@ -1,5 +1,7 @@
 <?php include_once 'cabecera.php';?>
 <?php 	include_once 'libs/menu.php'; ?>
+<?php 	include_once 'inactivo.php';
+		include_once 'sesion.php'; ?>
 	<section class="container planes_registro">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -21,7 +23,7 @@
 					?>
 					<script type="text/javascript">
 						alert("Plan registrado con éxito!");
-						window.location="planes_registro.php";
+						window.location="asignacion_planes.php";
 					</script>
 					<?php
 						else :
@@ -46,7 +48,7 @@
 						<!-- Nombre del Plan de Formacion -->
 						<div class="col-md-6">
 							<label for="nomb_plan">Nombre del plan de formacion: </label>
-							<input class="form-control" type="text" name="nomb_plan" maxlength="50" size="44" placeholder="Ingrese un Nombre de Plan de Formacion" required pattern="[A-Za-z ]+" title="Solo caracteres y espacios" /><br>
+							<input class="form-control" type="text" name="nomb_plan" maxlength="50" size="44" placeholder="Ingrese un Nombre de Plan de Formacion" required pattern="[A-Za-z ]+" title="Solo caracteres y espacios" required/><br>
 						</div>
 					</div>
 					<!-- Descripcion del plan  -->
@@ -70,7 +72,7 @@
 							<button class="btn btn-sistema" type="reset" title="Haga clic para limpiar formulario"><span class="glyphicon glyphicon-repeat"></span> Limpiar Formulario</button>
 						</div>
 						<div class="col-md-4 text-right">
-							<button type="submit" name="registro" value="registro" title="Haga clic para Registrar un Plan" class="btn btn-sistema" onclick=location="asignacion_planes.php"> <span class="glyphicon glyphicon-floppy-saved"> </span> Guardar </button>
+							<button type="submit" name="registro" value="registro" title="Haga clic para Registrar un Plan" class="btn btn-sistema"> <span class="glyphicon glyphicon-floppy-saved"> </span> Guardar </button>
 						</div>
 					</div>
 				</form>

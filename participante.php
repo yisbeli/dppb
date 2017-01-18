@@ -1,5 +1,7 @@
 <?php	include_once 'cabecera.php'; ?>
 <?php   include_once 'libs/menu.php'; ?>
+<?php 	//include_once 'inactivo.php';
+		//include_once 'sesion.php'; ?>
 	<section class="container">
 		<div class="row">
 			<div class="col-md-3"></div>
@@ -68,7 +70,7 @@
 							?>
 						<?php 
 							// ESTO HAY QUE ARREGLARLO //
-							else if (isset($actualizar) AND $actualizar == "Si") :
+							elseif (isset($actualizar) AND $actualizar == "Si") :
 								require_once 'config/conexion_bd.php';
 
 								//ACTUALIZAMOS

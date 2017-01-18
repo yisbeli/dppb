@@ -1,5 +1,7 @@
 <?php 
 include('config/conexion_bd.php');
+	include_once 'inactivo.php';
+	include_once 'sesion.php';
 
 extract ($_POST);
 

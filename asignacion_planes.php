@@ -1,4 +1,6 @@
 <?php	include_once 'cabecera.php';
+		include_once 'inactivo.php';
+		include_once 'sesion.php';
 	include 'config/conexion_bd.php';
 	$sql = "SELECT * FROM tipo_plan";
 	$result = mysqli_query($mysqli, $sql);
@@ -14,14 +16,14 @@
 			 if($cirabel){ 
 							echo'
 								<script type="text/javascript">
-								alert("SE HA ASIGNADO EL RESPONSABLE AL PLAN DE FORMACION CON EXITO!");
+								alert("Se ha asignado el responsable con exito!");
 								window.location="asignacion_planes.php";
 								</script>
 								';
 						}
 			else {
 				echo'<script type="text/javascript">
-								alert("No ha sido posible asignar el plan al responsable");
+								alert("No ha sido posible asignar al responsable el plan");
 								window.location="asignacion_planes.php";
 								</script>';
 			}
@@ -32,6 +34,7 @@
 	elseif (isset($consulta2)) : 
 		$sql = "SELECT * FROM planes WHERE tipo_plan='$plan'";
 		$result = mysqli_query($mysqli, $sql);
+		
 		$sql = "SELECT * FROM responsables";
 		$resultado = mysqli_query($mysqli, $sql);
 		$sql = "SELECT * FROM statuspl";
@@ -43,7 +46,7 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<form action="asignacion_planes.php" method="POST">
+				<form action="asignacion_planes.php" method="POST" id="asignacira">
 					<legend>Resultado de la búsqueda</legend>
 					<table class="table table-bordered">
 						<tr class="bg-warning">
@@ -52,16 +55,24 @@
 							<th class="text-center">UT</th>
 							<th class="text-center">Acción</th>
 						</tr>
-						<?php while ($consulta = mysqli_fetch_array($result)) :
-							echo "
+						<?php if (mysqli_num_rows($result)>0): ?>
+							<?php while ($consulta = mysqli_fetch_array($result)) :
+								echo "
+								<tr>
+									<td class='text-center'>".$consulta[2]."</td>
+									<td class='text-center'>".$consulta[3]."</td>
+									<td class='text-center'>".$consulta[4]."</td>
+									<td class='text-center'><input type='radio' name='codigoplan' value='".$consulta[0]."' class='' /></td>
+								</tr>";
+							endwhile; ?>
+							</table>
+						<?php else: ?>
+
 							<tr>
-								<td class='text-center'>".$consulta[2]."</td>
-								<td class='text-center'>".$consulta[3]."</td>
-								<td class='text-center'>".$consulta[4]."</td>
-								<td class='text-center'><input type='radio' name='codigoplan' value='".$consulta[0]."' class='' /></td>
-							</tr>";
-						endwhile; ?>
-					</table>
+								<td colspan="4">No hay registros</td>
+							</tr>
+						</table>
+						<?php endif ?>
 					<div class="col-md-6">
 						<label>Responsable a asignar</label>
 						<select required name="responsable" class="form-control">
@@ -101,7 +112,7 @@
 					<div class="text-left">
 						<button class="btn btn-sistema" type="reset" title="volver" onclick=location="sala.php"> <span class="glyphicon glyphicon-hand-left"></span> Volver al inicio</button>
 						<button class="btn btn-sistema" type="reset" title="Haga clic para limpiar formulario"> <span class="glyphicon glyphicon-repeat"> </span> Limpiar Formulario</button>
-						<button type="submit" name="crear" class="btn btn-sistema"><span class="glyphicon glyphicon-floppy-saved"></span> Asignar</button>
+						<button type="submit" name="crear"disabled  <?php if(mysqli_num_rows($result)==0)echo"disabled"; ?> class="btn btn-sistema"><span class="glyphicon glyphicon-floppy-saved"></span> Asignar</button>
 					</div>
 				</form>
 			</div>

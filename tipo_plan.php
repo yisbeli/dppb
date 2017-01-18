@@ -1,8 +1,8 @@
-<?php
-	include_once 'cabecera.php';
-?>
-
-	<?php 	include_once 'libs/menu.php'; ?>
+<?php include_once 'cabecera.php';?>
+<?php 	include_once 'libs/menu.php'; ?>
+<?php 	include_once 'inactivo.php';
+		include_once 'sesion.php'; ?>
+		
 	<section class="container">
 		<div class="rows">
 			<div class="col-md-3"></div>
@@ -32,6 +32,7 @@
 						<br>
 						<label>Evaluacion: </label>
 						<select name="Evaluacion" class="form-control" required>
+							<option selected disabled value=""> --Seleccione-- </option>
 							<option value="si">Si</option>
 							<option value="no">No</option>
 						</select>

@@ -1,6 +1,8 @@
 <?php
 include_once 'cabecera.php';
 include_once 'libs/menu.php';
+include_once 'inactivo.php';
+include_once 'sesion.php';
 $ced_resp = $_REQUEST['ce'];
 $sql="SELECT * FROM responsables WHERE ced_resp='$ced_resp'";
 $result=mysqli_query($mysqli,$sql);

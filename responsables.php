@@ -1,5 +1,7 @@
 <?php	include_once 'cabecera.php'; ?>
 <?php 	include_once 'libs/menu.php'; ?>
+<?php 	include_once 'inactivo.php';
+		include_once 'sesion.php'; ?>
 	<section class="responsable container">
 
 	<?php extract($_POST);
@@ -43,7 +45,7 @@
 
 					<div class="col-md-6">
 						<select name="nivel" class="form-control" required> 
-						
+						<option selected disabled value=""> --Seleccione-- </option>
 							<?php
 							include 'config/conexion_bd.php';
 							$sql= "SELECT * FROM nivel_academico";
@@ -56,7 +58,8 @@
 					</div>
 
 					<div class="col-md-6">
-						<select name="tipo" class="form-control"> 
+						<select name="tipo" class="form-control" required> 
+						<option selected disabled value=""> --Seleccione-- </option>
 						
 						<?php
 							include 'config/conexion_bd.php';

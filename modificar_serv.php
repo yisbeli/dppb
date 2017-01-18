@@ -1,6 +1,8 @@
 <?php
 	include_once 'cabecera.php';
   include_once 'libs/menu.php';
+  include_once 'inactivo.php';
+  include_once 'sesion.php';
 $cod_serv=$_REQUEST['cod_serv'];
 //$cod_serv = isset($_POST['cod_serv']);
 $sql=("SELECT * FROM servicios WHERE cod_serv='$cod_serv'");

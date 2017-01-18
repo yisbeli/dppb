@@ -1,5 +1,7 @@
 <?php 
 require_once 'config/conexion_bd.php'; 
+	include_once 'inactivo.php';
+	include_once 'sesion.php';
 $cod_par=$_REQUEST['eu']; 
 $sql="DELETE FROM participantes WHERE cod_par='$cod_par'";
 if (mysqli_query($mysqli,$sql)) 

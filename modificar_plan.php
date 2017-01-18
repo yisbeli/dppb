@@ -1,6 +1,8 @@
 <?php
 include_once 'cabecera.php';
 include_once 'libs/menu.php';
+include_once 'inactivo.php';
+include_once 'sesion.php';
 $cod_plan = $_REQUEST['cp'];
 $sql="SELECT * FROM planes WHERE cod_plan='$cod_plan'";
 $result=mysqli_query($mysqli,$sql);

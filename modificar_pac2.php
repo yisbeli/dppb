@@ -1,5 +1,7 @@
 <?php 
 include('config/conexion_bd.php');
+	include_once 'inactivo.php';
+	include_once 'sesion.php';
 /*$cedu_pac=$_REQUEST['cedu_pac'];
 $nomb_pac=$_REQUEST['nomb_pac'];
 $edad=$_REQUEST['edad'];

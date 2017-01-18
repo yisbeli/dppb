@@ -14,7 +14,7 @@
 
 			    <!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				    <?php if ($_SESSION['tipo'] == 1) : ?>
+				    <?php if (!empty($_SESSION['tipo'])&& $_SESSION['tipo'] == 1) : ?>
 				      <ul class="nav navbar-nav">
 				        <li class="dropdown">
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Planes de Formacion<span class="caret"></span></a>
@@ -24,8 +24,8 @@
 				            <li><a href="asignacion_planes.php">Asignación de Planes</a></li>
 				            <li><a href="responsables.php"> Registrar Nuevo Responsable</a></li>
 				            <li><a href="consulta_responsable.php">Consultar Responsables</a></li>
-
-
+				            
+				            
 				          </ul>
 				        </li>
 				        <li class="dropdown">
@@ -55,30 +55,29 @@
 					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Herramientas <span class="caret"></span></a>
 					  <ul class="dropdown-menu">
 						<?php if ($_SESSION['tipo'] == 1) : ?>
-					        <li><a href="nuevo_usu.php">Registrar nueva cuenta</a></li>
-					        <li><a href="nivel_academico.php">Nivel académico</a></li>
-					        <li><a href="cargo_institucional.php">Cargo en la institución</a></li>
-					        <li><a href="unidades_tributarias.php">Unidades tributarias</a></li>
-					        <li><a href="tipo_servicio.php">Registrar tipo de servicio </a></li>
+					        <li><a href="nuevo_usu.php">Registrar Nueva Cuenta</a></li>
+					        <li><a href="nivel_academico.php">Nivel Académico</a></li>
+					        <li><a href="cargo_institucional.php">Cargo en la Institución</a></li>
+					        <li><a href="unidades_tributarias.php">Unidades Tributarias</a></li>
+					        <li><a href="tipo_servicio.php">Registrar Tipo de Servicio </a></li>
 					        <li role="separator" class="divider"></li>
 					        <li><a href="#"></a></li>
-					        <li><a href="aceptacion_usu.php">Aceptación de usuario</a></li>
+					        <li><a href="aceptacion_usu.php">Aceptación de Usuario</a></li>
 							<?php endif; ?>
-					    <li><a href="actualizar_contrasena.php">Cambio de contraseña</a></li>
+					    <li><a href="#">Cambio de Clave</a></li>
 					    <li role="separator" class="divider"></li>
 						<?php if ($_SESSION['tipo'] == 1) : ?>
-					        <li><a href="respaldo.php">Respaldar</a></li>
-					         <li><a href="restaurar.php">Restaurar</a></li>
+					        <li><a href="backup/index.php">Respaldar y Restaurar</a></li>
 					        <li role="separator" class="divider"></li>
 							<?php endif; ?>
-					    <li><a href="#">Manual de usuario</a></li>
+					    <li><a href="#">Manual de Usuario</a></li>
 					    <li><a href="#">Acerca de</a></li>
 					  </ul>
 					</li>
 					<li><a href="config/logout.php"> Cierre de sesión <span class="glyphicon glyphicon-log-out"></span> </a></li>
-
+				        
 				      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
-			</div>
+			</div>	

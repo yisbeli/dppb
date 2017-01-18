@@ -42,3 +42,19 @@ $(function() {
 		/*beforeShowDay: $.datepicker.noWeekends*/
 	});
 });
+
+$('#aceptacira input[type="checkbox"]').change(function(){
+	if ($('#aceptacira input[type="checkbox"]').is(':checked')){
+		$('#aceptacira button[type="submit"]').removeAttr('disabled');
+	}
+	else{
+		$('#aceptacira button[type="submit"]').attr('disabled','disabled');
+	}
+});
+
+
+$('#asignacira input[type="radio"]').change(function(){
+	if ($('#asignacira input[type="radio"]').is(':checked')){
+		$('#asignacira button[type="submit"]').removeAttr('disabled');
+	}
+});

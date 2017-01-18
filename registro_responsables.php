@@ -1,4 +1,6 @@
 <?php	include_once 'cabecera.php'; ?>
+<?php 	include_once 'inactivo.php';
+		include_once 'sesion.php'; ?>
 	<section class="container">
 
 	<?php extract($_POST);
