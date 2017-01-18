@@ -5,7 +5,7 @@
 			<div class="col-md-8">
 				<h2 class="text-center">Reporte total de egresos</h2>
 					<h3>Tipo de egresos: </h3>
-					<form method="POST" action="">
+					
 						<?php 
 						extract($_POST);
 
@@ -44,8 +44,10 @@
 										</tr>";
 							$sql=("SELECT * FROM egresos WHERE fech_egr >= '".$ano."-".$mes."-01' AND fech_egr <= '".$ano."-".$mes."-31' ORDER BY fech_egr ASC");
 							$resultado=mysqli_query($mysqli,$sql);
+							$montoTotal= 0;
 							while ($result=mysqli_fetch_array($resultado)): 
 								
+								$montoTotal += $result[3];
 							
 									echo "<tr class='text-center'>
 											<td>$result[1]</td>
@@ -55,12 +57,23 @@
 										</tr>";
 										endwhile;	
 							?>
+							<tr class="bg-warning">
+								<th colspan="3"> Total egresos</th>
+								<th class="text-center"><?php echo $montoTotal; ?></th>
+							</tr>
 				</table>
 				<?php } ?>
-				</form>
+				<form method="POST" action="egresos_pdf.php">
+
+					<input  type="hidden" name="mes" value="<?php echo $mes;  ?>">
+					<input type="hidden" name="ano" value="<?php echo $ano ?>">
+
 				<div class="text-center">
 					<button class="btn btn-sistema" type="button" onclick=location="egresos_mes.php">Regresar a la pagina principal</button>					
+					<button class="btn btn-sistema" type="submit" >Imprimir</button>					
 				</div><br>
+				</form>
+
 			</div>
 		</div>
 	</div>

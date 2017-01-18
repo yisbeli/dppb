@@ -67,7 +67,8 @@
 					    <li><a href="actualizar_contrasena.php">Cambio de contraseña</a></li>
 					    <li role="separator" class="divider"></li>
 						<?php if ($_SESSION['tipo'] == 1) : ?>
-					        <li><a href="backup/index.php">Respaldar y Restaurar</a></li>
+					        <li><a href="respaldo.php">Respaldar</a></li>
+					         <li><a href="restaurar.php">Restaurar</a></li>
 					        <li role="separator" class="divider"></li>
 							<?php endif; ?>
 					    <li><a href="#">Manual de usuario</a></li>

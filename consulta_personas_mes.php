@@ -4,7 +4,6 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<h2 class="text-center">Reporte mensual personas capacitadas</h2>
-				<form method="POST" action="">
 					<?php 
 						extract($_POST);
 
@@ -65,15 +64,21 @@
 					<?php $i += $participantes[0] ; endwhile; ?>
 					<tr class="bg-warning">
 							<th colspan="3"> Total personas capacitadas</th>
-							<th><?php echo $i; ?></th>
+							<th class="text-center"><?php echo $i; ?></th>
 					</tr>
 
 					</table>
 				<?php } ?>
+				<form method="POST" action="personas_capacitadas_pdf.php">
+
+					<input  type="hidden" name="mes" value="<?php echo $mes;  ?>">
+					<input type="hidden" name="ano" value="<?php echo $ano ?>">
+
+					<div class="text-center">
+						<button class="btn btn-sistema" type="button" onclick=location="personas_capacitadas_mes.php">Regresar a la pagina principal</button>					
+						<button class="btn btn-sistema" type="submit" target="_blank" >Imprimir</button>					
+					</div><br>
 				</form>
-				<div class="text-center">
-					<button class="btn btn-sistema" type="button" onclick=location="personas_capacitadas_mes.php">Regresar a la pagina principal</button>					
-				</div><br>
 			</div>
 		</div>
 	</div>

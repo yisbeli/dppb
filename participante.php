@@ -68,7 +68,7 @@
 							?>
 						<?php 
 							// ESTO HAY QUE ARREGLARLO //
-							elseif (isset($actualizar) AND $actualizar == "Si") :
+							else if (isset($actualizar) AND $actualizar == "Si") :
 								require_once 'config/conexion_bd.php';
 
 								//ACTUALIZAMOS

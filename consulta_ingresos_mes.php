@@ -1,4 +1,4 @@
-<?php include_once 'cabecera.php'; ?>
+ <?php include_once 'cabecera.php'; ?>
 	<section class="container">
 		<div class="rows">
 			<div class="col-md-2"></div>

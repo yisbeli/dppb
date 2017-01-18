@@ -27,9 +27,10 @@
                         $command_sql="UPDATE planes_participantes SET exonerado='$tipo',bauche='$num_bauche', status='inscrito' WHERE cod_plan='$codigoplan' AND cod_par='$cedula'";
                         mysqli_query($mysqli,$command_sql);
 
+                        //Es un estudiante que paga su curso o charla
                         if ($tipo=="No"):
 
-                            $command_sql="SELECT pp.precio FROM planes_participantes pp, planes_responsables pr WHERE pr.id='$codigoplan' AND pp.cod_par='$cedula'";
+                            $command_sql="SELECT pp.precio FROM planes_participantes pp WHERE pp.cod_plan='$codigoplan' AND pp.cod_par='$cedula'";
                             $h=mysqli_query($mysqli,$command_sql);
                             $precio=mysqli_fetch_array($h);
 
