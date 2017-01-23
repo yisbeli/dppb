@@ -1,6 +1,11 @@
 <?php
   include_once 'cabecera.php';
   include_once 'libs/menu.php';
+$cedu_pac = isset($_POST['cedu_pac']);
+$sql=("SELECT * FROM paciente WHERE cedu_pac='$cedu_pac'");
+$result=mysqli_query($mysqli,$sql);
+$row=mysqli_fetch_array($result);
+
 ?>
 
 <section class="container">
@@ -8,9 +13,9 @@
     <div class="rows">
       <div class="col-md-3"></div>
       <div class="col-md-6">
-        <legend>Registro del Paciente</legend>
+        <legend>Modificar  Paciente</legend>
 
-<form method="post" action="inser_pac.php">
+<form method="post" action="modificar_pac2.php">
 
        <div class="col-md-6">
 	   <label for="cedu_pac"> C.I:</label>

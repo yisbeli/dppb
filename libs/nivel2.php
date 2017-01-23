@@ -5,7 +5,7 @@
 
 	if (isset($consulta2)) :
 
-		$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid, pr.id FROM planes p, planes_responsables pr WHERE pr.status='por-iniciar' AND pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
+		$sql = "SELECT p.nomb_plan, p.desc_plan, p.cant_unid, pr.id FROM planes p, planes_responsables pr WHERE pr.cod_plan=p.cod_plan AND p.tipo_plan='$plan'";
 		$result = mysqli_query($mysqli, $sql);
 ?>
 	<div class="row">
@@ -27,6 +27,7 @@
 					</tr>";
 				endwhile; ?>
 			</table>
+			<button align= "center"class="btn btn-sistema" type="button" onclick=location="sala.php"> <span class="glyphicon glyphicon-hand-left"></span> Regresar atrás</button>
 		</div>
 	</div>
 <?php else :
@@ -48,6 +49,7 @@
 			</select><br>
 			<div class="text-center">
 				<button type="submit" name="consulta2" class="btn btn-sistema"> <span class="glyphicon glyphicon-search"></span>Consultar</button>
+
 			</div><br>
 		</div>
 	</div>

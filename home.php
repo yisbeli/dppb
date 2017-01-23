@@ -26,12 +26,13 @@
 					<div class="text-center">
 						<button type="submit" class="btn btn-sistema">Iniciar Sesión <span class="glyphicon glyphicon-log-in"></span></button><br><br>
 					</div>
+					<a href="recuperar_contrasena.php" >Recuperacion de contraseña</a>
 				</form>
 				<br><br>
 				<form action="busqueda_planes.php" method="POST">
 					<legend>Planes a consultar</legend>
-					<select name="plan" id="plan" class="form-control">
-						<option disabled selected>--Seleccione una opción--</option>
+					<select name="plan" id="plan" class="form-control" required>
+						<option selected disabled value=""> --Seleccione una opción-- </option>
 						<?php while ($consulta = mysqli_fetch_array($result)) : ?>
 							<option value="<?php echo $consulta[0]; ?>"> <?php echo $consulta[1]; ?></option>
 						<?php endwhile; ?>

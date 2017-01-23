@@ -1,8 +1,6 @@
 <?php
   include_once 'cabecera.php';
   include_once 'libs/menu.php';
-  include_once 'inactivo.php';
-  include_once 'sesion.php';
 $cedu_pac = isset($_POST['cedu_pac']);
 $sql=("SELECT * FROM paciente WHERE cedu_pac='$cedu_pac'");
 $result=mysqli_query($mysqli,$sql);

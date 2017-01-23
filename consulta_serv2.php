@@ -1,8 +1,6 @@
 <?php
 	include_once 'cabecera.php';
   include_once 'libs/menu.php';
-  include_once 'inactivo.php';
-  include_once 'sesion.php';
 ?>
 
 
@@ -19,13 +17,10 @@
                   $command_sql = "SELECT id_tipo_serv, nomb_tipo_serv FROM tipo_servicio";
                   require 'config/sql.php'
                 ?>
-         
-   <select class="form-control" name="id_tipo_serv">
-                              <option name="id_tipo_serv" value="">--Seleccione--</option>
-                              <?php
-                while($registro=mysqli_fetch_array($result))
-                {
-                ?>
+   <select class="form-control" name="id_tipo_serv" id="id_tipo_serv">
+                              <option disabled selected >--Seleccione--</option>
+                              <?php while($registro=mysqli_fetch_array($result))
+                {      ?>
                               <option name="id_tipo_serv" value="<?php echo $registro[0] ?> "><?php echo $registro[1] ?></option>
                 <?php } ?>
        </select>

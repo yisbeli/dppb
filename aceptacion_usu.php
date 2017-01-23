@@ -76,7 +76,7 @@
 					endwhile; ?>
 				</table>
 				<div class="buttons text-center">
-					<button type="submit" disabled name="actualizar" value="actualizar" title="Haga clic para Actualizar" class="btn btn-sistema">  <span class="glyphicon glyphicon-ok"></span> Aceptar</button>
+					<button type="submit"  name="actualizar" value="actualizar" title="Haga clic para Actualizar" class="btn btn-sistema">  <span class="glyphicon glyphicon-ok"></span> Aceptar</button>
 				</div><br>	
 				</form>
 			</div>

@@ -1,7 +1,5 @@
 <?php include("cabecera.php"); ?>
 <?php 	include_once 'libs/menu.php'; ?>
-<?php 	include_once 'inactivo.php';
-		include_once 'sesion.php'; ?>
 <script>
  function imprimir(){
  window.print();

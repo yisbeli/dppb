@@ -112,7 +112,7 @@
 					<div class="text-left">
 						<button class="btn btn-sistema" type="reset" title="volver" onclick=location="sala.php"> <span class="glyphicon glyphicon-hand-left"></span> Volver al inicio</button>
 						<button class="btn btn-sistema" type="reset" title="Haga clic para limpiar formulario"> <span class="glyphicon glyphicon-repeat"> </span> Limpiar Formulario</button>
-						<button type="submit" name="crear"disabled  <?php if(mysqli_num_rows($result)==0)echo"disabled"; ?> class="btn btn-sistema"><span class="glyphicon glyphicon-floppy-saved"></span> Asignar</button>
+						<button type="submit" name="crear"<?php if(mysqli_num_rows($result)==0)echo"disabled"; ?> class="btn btn-sistema"><span class="glyphicon glyphicon-floppy-saved"></span> Asignar</button>
 					</div>
 				</form>
 			</div>

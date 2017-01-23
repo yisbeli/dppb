@@ -2,7 +2,7 @@
 	session_start();
 	include('conexion_bd.php');
 	extract($_POST);
-	//$password = md5($password);
+	$password = md5($password);
 	$sql = "SELECT * FROM user WHERE correo='$usuario' AND clave ='$password'";
 	$result = mysqli_query($mysqli,$sql);
 	if(mysqli_num_rows($result)){

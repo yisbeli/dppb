@@ -1,19 +1,26 @@
 <?php include("cabecera.php"); 
 include_once 'libs/menu.php';?>
-<?php 	include_once 'inactivo.php';
-	    include_once 'sesion.php'; ?>
 <section class="container">
-	
+					<?php 
+include('config/conexion_bd.php');
+$id_tipo_serv=$_REQUEST['id_tipo_serv'];
+$sql="SELECT s . * , ts.nomb_tipo_serv , u.seudonimo, r.nomb_resp, m.nomb_mun FROM `responsables` r, `servicios` s,  `tipo_servicio` ts, `unidades` u, `municipios` m WHERE ts.id_tipo_serv = s.id_tipo_serv AND r.cod_resp = s.cod_resp AND m.id_municipio = s.id_municipio AND s.id_tipo_serv='$id_tipo_serv'";
+
+$result=mysqli_query($mysqli,$sql);
+if (empty($result)) {
+              echo "<legend class='text-center'> No se encontro ningun registro </legend>";
+            } else {		
+
+
+	?>	
 		<div class="rows">
 			<div class="col-md-1"></div>
 			<div class="col-md-8" >
 				<legend>Cosulta de Servicios Operacionales</legend>
 				<form method="POST" action="consulta_ser3.php">
-
-<table class="table table-bordered" algin="left">
-	<tr class="bg-warning">
+<table class="table table-bordered" algin="center">
+	 	<tr class="bg-warning">
 		<th>Codigo de Servicio</th>
-		<th>Tipo de Servicio</th>
 		<th>Hora de Salida</th>
 		<th>Hora de llegada</th>
 		<th>Hora de Ingreso  </th>
@@ -27,16 +34,9 @@ include_once 'libs/menu.php';?>
 		<th colspan="2"> Accion </th>
 	</tr>
 	<tr>
-<?php 
-include('config/conexion_bd.php');
-
-$sql="SELECT s . * , ts.nomb_tipo_serv , u.seudonimo, r.nomb_resp, m.nomb_mun FROM `responsables` r, `servicios` s,  `tipo_servicio` ts, `unidades` u, `municipios` m WHERE ts.id_tipo_serv = s.id_tipo_serv AND r.cod_resp = s.cod_resp AND m.id_municipio = s.id_municipio ";
-$result=mysqli_query($mysqli,$sql);
-while($row= mysqli_fetch_array ($result)){
-	?>
+      <?php  while($row= mysqli_fetch_array ($result)){ ?>
 	</tr class="text-center">
 		<td><?php echo $row['cod_serv'];?></td>
-		<td><?php echo $row['nomb_tipo_serv'];?></td>
 		<td><?php echo $row['hora_salida'];?></td>
 		<td><?php echo $row['hora_llegada'];?></td>
 		<td><?php echo $row['hora_ingreso'];?></td>
@@ -49,21 +49,22 @@ while($row= mysqli_fetch_array ($result)){
 		<td><?php echo $row['nomb_resp'];?></td>
 
 		
-			<td class="text-center" colspan="1"><a href='./modificar_serv.php?cod_serv=<?php echo $row['cod_serv'];?>'><img src="img/pencil_16.png" onclick="return confirm('Seguro que Desea Modificar Servicio')";></a></td>
-			<td class="text-center" colspan="1"><a href='./eliminar_serv.php?cod_serv=<?php echo $row['cod_serv']; ?> '><img src="img/delete_16.png" onclick="return confirm('Seguro que Desea Eliminar Servicio')";></a></td>
+			<td class="text-center" colspan="1"><a href='./modificar_serv.php?cod_serv=<?php echo $row['cod_serv'];?>'onclick="return confirm('Seguro que Desea Modificar Servicio')";> <span class="glyphicon glyphicon-pencil"></span></a> </td>
+			<td class="text-center" colspan="1"><a href='./eliminar_serv.php?cod_serv=<?php echo $row['cod_serv']; ?>'onclick="return confirm('Seguro que Desea Eliminar Servicio')";>  <span class="glyphicon glyphicon-trash"></span></a> </td>
 			
-		
+	
 	</tr>
-	<?php
-}
+		<?php
+} 
 ?>
 </table>
+<?php } ?>
 	</form>
 	<br>
 		
 		
 		<div class="buttons text-center">
-	 	<button class="btn btn-sistema" type="button" onclick=location="sala.php"> <span class="glyphicon glyphicon-hand-left"></span> Volver al inicio </button>
+	 	<button class="btn btn-sistema" type="button" onclick=location="consulta_serv2.php"> <span class="glyphicon glyphicon-hand-left"></span> Volver al inicio </button>
 		</div><br>
 		
 		<?php if(isset($_SESSION['log'])){ ?> <input type="submit" class="submit" "../insert/Servicio.php" style="margin:15px" value="Registrar Nuevo Servicio" align="center"/><?php } ?>

@@ -1,8 +1,6 @@
 <?php 
 	  include("cabecera.php"); 
 	  include_once 'libs/menu.php';?>
-<?php 	include_once 'inactivo.php';
-	include_once 'sesion.php'; ?>
 <section class="container">
 	
 		<div class="rows">
@@ -57,7 +55,7 @@
 		<div class="buttons text-center">
 	
 	 
-		<button type="button" class="btn btn-sistema" onclick:location="sala.php" name="plan" title="Haga click para regresar a la página anterior" ><span class="glyphicon glyphicon-hand-left"></span> Volver al Inicio</button> 
+		<button class="btn btn-sistema" type="button" onclick=location="consulta_pac2.php"> <span class="glyphicon glyphicon-hand-left"></span> Volver al inicio </button> 
 		
 		<?php if(isset($_SESSION['log'])){ ?><input type="submit" class="submit" "paciente.php" style="margin:15px" value="Registrar Nuevo Paciente" align="center"/><?php } ?>
 	 

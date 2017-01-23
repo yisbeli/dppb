@@ -16,5 +16,8 @@
 			include_once 'libs/nivel2.php';
 		endif;
 ?>
+<div class="text-center">
+
+</div><br>
 	</section>
 <?php	include_once 'pie.php';  ?>

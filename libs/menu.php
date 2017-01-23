@@ -32,7 +32,6 @@
 				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estadisticas <span class="caret"></span></a>
 				          <ul class="dropdown-menu">
 				           <li><a href="planes_dictados.php">Reporte Mensual de los Planes Dictados</a></li>
-				            <li><a href="ingresos_mes.php">Reporte Mensual de los Ingresos</a></li>
 				           <li><a href="personas_capacitadas_mes.php">Reporte Mensual de las Personas Capacitadas</a></li>
 				            <li><a href="egresos_registro.php">Registro de los Egresos</a></li>
 				            <li><a href="egresos_mes.php">Reporte Mensual de los Egresos</a></li>
@@ -64,14 +63,13 @@
 					        <li><a href="#"></a></li>
 					        <li><a href="aceptacion_usu.php">Aceptación de Usuario</a></li>
 							<?php endif; ?>
-					    <li><a href="#">Cambio de Clave</a></li>
+					    <li><a href="actualizar_contrasena.php">Cambio de contraseña</a></li>
 					    <li role="separator" class="divider"></li>
 						<?php if ($_SESSION['tipo'] == 1) : ?>
-					        <li><a href="backup/index.php">Respaldar y Restaurar</a></li>
+					        <li><a href="respaldo.php">Respaldar</a></li>
+					         <li><a href="restaurar.php">Restaurar</a></li>
 					        <li role="separator" class="divider"></li>
 							<?php endif; ?>
-					    <li><a href="#">Manual de Usuario</a></li>
-					    <li><a href="#">Acerca de</a></li>
 					  </ul>
 					</li>
 					<li><a href="config/logout.php"> Cierre de sesión <span class="glyphicon glyphicon-log-out"></span> </a></li>
